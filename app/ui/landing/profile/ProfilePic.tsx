@@ -7,6 +7,7 @@ interface ProfilePicProps {
     imageHeight?: number;
     profilePicDescription?: string;
     profilePicSrc?: string;
+    restingOpacity?: number;
 }
 
 export const ProfilePic = ({
@@ -15,9 +16,10 @@ export const ProfilePic = ({
     imageHeight,
     profilePicDescription,
     profilePicSrc,
+    restingOpacity = 1,
 }: ProfilePicProps) => {
     return (
-        <div className={`relative w-full h-full ${className}`}>
+        <div className={`relative w-full h-full ${className}`} style={{ opacity: restingOpacity }}>
             <Image
                 src={`${profilePicSrc}`}
                 alt={`${profilePicDescription}`}

@@ -5,6 +5,7 @@ import { neutral_browns } from '../colors/neutrals/browns';
 import { spectrum_blues } from '../colors/spectrum/blues';
 import { theme } from './theme_light';
 import { darkThemeColors } from './theme_dark';
+import { proficiencyColors } from '../colors/proficiencies';
 import { typography } from '../typography/typography';
 import { lightThemeButtonShadows, darkThemeButtonShadows } from './shadows';
 
@@ -17,6 +18,7 @@ export const themeConfig = {
         ...neutral_browns,
         ...neutral_whites,
         ...spectrum_blues,
+        ...proficiencyColors,
     },
     typography: {
         ...typography.font,

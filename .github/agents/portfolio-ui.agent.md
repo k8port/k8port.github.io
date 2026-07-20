@@ -50,7 +50,7 @@ app/
 - All Tailwind tokens (colors, fonts, shadows, spacing, breakpoints, z-index) are defined in `app/styles/theme/theme.config.ts` — **always use these tokens**, never hardcode raw values.
 - Custom breakpoints: `xs(480px)`, `sm`, `md`, `mlg(900px)`, `lg`, `xl(1200px)`, `2xl(1400px)`, `3xl`, `4xl`, `5xl(2000px)`.
 - Custom spacing tokens: `header` (maps to `--header-height`), `footer` (maps to `--footer-margin`).
-- Font CSS variables: `--font-spaceGrotesk`, `--font-dmSerifDisplay`, `--font-greatVibes`, `--font-martianMono`, `--font-lobster`.
+- Font CSS variables: `--font-josefinsans`, `--font-dmSerifDisplay`, `--font-greatVibes`, `--font-martianMono`, `--font-lobster`.
 - Z-index scale: `header(50)`, `modal(100)`, `tooltip(200)`.
 
 ## Rules

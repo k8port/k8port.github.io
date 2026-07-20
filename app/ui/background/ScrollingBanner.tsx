@@ -22,7 +22,7 @@ export default function ScrollingBanner({ className }: ScrollingBannerProps) {
             shadow-btn-shadow3
             ${className}`}
         >
-            <div className="text-brand-secondary text-center text-2xl md:text-5xl font-greatvibes">
+            <div className="text-brand-secondary text-center text-2xl md:text-5xl font-lobster">
                 <div className="whitespace-nowrap animate-scroll px-4 py-2">
                     Non Perditio Dolorem
                 </div>

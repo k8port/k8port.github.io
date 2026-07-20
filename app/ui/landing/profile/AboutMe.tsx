@@ -31,7 +31,7 @@ export default function AboutMe({ className }: AboutMeProps) {
             >
                 <div className="absolute inset-4">
                     <div className="flex items-start gap-4 lg:gap-8 p-2 lg:p-4">
-                        <span className="text-redblacks-blackplum text-2xl md:text-2xl lg:text-3xl font-greatvibes">
+                        <span className="text-redblacks-blackplum text-2xl md:text-2xl lg:text-3xl font-lobster">
                             Favorites
                         </span>
                         <FaHeart color="#FF0000" size={25} />

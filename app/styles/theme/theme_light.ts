@@ -25,14 +25,8 @@ export const theme = {
             accentpink: 'oklch(0.81 0.0672 46.9)',
             accentpinkvar: 'oklch(0.74 0.1445 26.21)',
         },
-        proficiencies: {
-            novice: 'oklch(0.68 0.2069 33.86)',
-            advbegin: 'oklch(0.76 0.1547 96.53)',
-            competent: 'oklch(0.77 0.2293 146.85)',
-            proficient: 'oklch(0.59 0.100276 202.6893)',
-            expert: 'oklch(0.25 0.074853 251.9371)',
-        },
         collection: {
+            pariswhite: 'oklch(0.94 0.0055 200)',
             alizarincrimson: 'oklch(0.59 0.2198 23.84)',
             caribbeangreen: 'oklch(0.75 0.15387 166.913)',
             iguanagreen: 'oklch(0.73 0.1228 146.31)',

@@ -58,7 +58,7 @@ const Footer: FC<FooterProps> = ({
             <div className="inline-flex space-x-6 text-xl text-center order-last md:order-none">
                 <p className="font-mono">@{new Date().getFullYear()}</p>
                 <p className="text-4xl font-lobster">k8port io</p>
-                <p className="font-dmserifdisplay">All rights reserved.</p>
+                <p className="font-zillaslab">All rights reserved.</p>
             </div>
 
             {/* Right social links */}

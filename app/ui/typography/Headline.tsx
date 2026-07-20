@@ -21,7 +21,7 @@ export const Headline = ({
     return (
         <p
             className={`
-            font-spacegrotesk 
+            font-josefinsans
             ${fontWeightClass} 
             ${leadingClass} 
             ${transformClass}

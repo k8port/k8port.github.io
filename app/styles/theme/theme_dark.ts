@@ -19,11 +19,3 @@ export const darkThemeColors = {
     dktertiary: 'oklch(0.23 0.0429 51.7)',
     dktertiaryvar: 'oklch(0.28 0.0773 2.1)',
 };
-
-export const proficiencyScaleColors = {
-    novice: 'oklch(0.68 0.2069 33.86)',
-    advbegin: 'oklch(0.76 0.1547 96.53)',
-    competent: 'oklch(0.77 0.2293 146.85)',
-    proficient: 'oklch(0.59 0.100276 202.6893)',
-    expert: 'oklch(0.25 0.074853 251.9371)',
-};

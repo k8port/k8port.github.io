@@ -13,10 +13,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './ui/header/Header';
 import {
-    dmSerifDisplay,
-    greatVibes,
-    martianMono,
-    spaceGrotesk,
+    fontZillaSlab,
+    josefinSans,
     lobster,
 } from './styles/typography/fonts';
 
@@ -44,12 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body
                 className={`
-                    ${spaceGrotesk.variable}
-                    ${dmSerifDisplay.variable}
-                    ${greatVibes.variable}
-                    ${martianMono.variable}
+                    ${josefinSans.variable}
+                    ${fontZillaSlab.variable}
                     ${lobster.variable}
-                    font-spacegrotesk
+                    font-josefinsans
                     flex
                     flex-col
                     bg-brand-primary

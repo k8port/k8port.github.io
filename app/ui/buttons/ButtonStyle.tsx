@@ -103,7 +103,7 @@ export const ButtonStyle = ({
                 className={`
                 inline-flex 
                 items-end 
-                [&[data-loading='true']]:items-center
+                data-[loading='true']:items-center
                 gap-1.5 
                 relative 
                 flex-[0_0_auto]
@@ -112,17 +112,17 @@ export const ButtonStyle = ({
                 <div
                     className={`
                     relative
-                    w-fit mt-[-1.00px] 
+                    w-fit mt-[px] 
                     whitespace-nowrap 
                     not-italic
                     text-[10.5px]
                     capitalize
-                    [&[data-loading='true']]:text-transparent
+                    data-[loading='true']:text-transparent
                     tracking-tight
                 `}
                 >
                     {IconComponent && <IconComponent className="inline-flex mx-auto w-5 h-5" />}
-                    <span className="data-[loading=true]:hidden mx-2 mt-t font-martianmono">
+                    <span className="data-[loading=true]:hidden mx-2 mt-t font-josefinsans">
                         {buttonText}
                     </span>
                 </div>
@@ -137,9 +137,9 @@ export const ButtonStyle = ({
                     uppercase
                 `}
                 >
-                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin !relative !w-2 !h-2" />
-                    <ShapeCircle className="hidden !relative !w-3.5 !h-3.5 group-data-[loading=true]:!w-4 group-data-[loading=true]:!h-4" />
-                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin !relative !w-2 !h-2" />
+                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin relative! w-2! h-2!" />
+                    <ShapeCircle className="hidden relative! w-3.5! h-3.5! group-data-[loading=true]:w-4! group-data-[loading=true]:h-4!" />
+                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin relative! w-2! h-2!" />
                 </div>
             </div>
         </button>
