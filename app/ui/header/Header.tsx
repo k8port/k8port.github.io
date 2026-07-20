@@ -1,5 +1,6 @@
 import React from 'react';
 import NavMenu from './navmenu/NavMenu';
+import ThemeToggle from '../theme/ThemeToggle';
 
 export default function Header({ className }: { className?: string }) {
     return (
@@ -22,7 +23,10 @@ export default function Header({ className }: { className?: string }) {
                                 I&apos;m not just a node, I am circuits
                             </span>
                         </div>
-                        <NavMenu className="grow flex justify-end" />
+                        <div className="flex items-center gap-2">
+                            <NavMenu className="grow flex justify-end" />
+                            <ThemeToggle />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,8 +12,7 @@ export default function ScrollingBanner({ className }: ScrollingBannerProps) {
             w-full h-10
             bg-accent-accentbluevar/50
             z-50
-            overflow-hidden
-            h-10 md:h-16
+            overflow-hidden md:h-16
             flex 
             items-center
             border border-solid border-brand-primary

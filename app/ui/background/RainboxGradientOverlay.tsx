@@ -13,7 +13,7 @@ export default function RainbowGradientOverlay({
         <div className={`${className}`}>
             <div
                 className={`
-        absolute inset-0 bg-gradient-to-b 
+        absolute inset-0 bg-linear-to-b 
         from-brand-quinaryvar 
         to-accent-accentpinkvar 
         ${innerClassName}

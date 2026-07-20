@@ -35,27 +35,6 @@
         @apply font-josefinsans text-[14px] leading-[17.7px] text-redblacks-vampireblack;
     }
 
-    .dark body {
-        @apply bg-dkdarksecondary text-redwhites-platinum;
-    }
-
-    .dark h1,
-    .dark h2,
-    .dark h3,
-    .dark h4,
-    .dark h5,
-    .dark h6 {
-        @apply text-redwhites-antiquewhite;
-    }
-
-    .dark .prose {
-        @apply text-redwhites-platinum;
-    }
-
-    .dark .nav-menu-item {
-        @apply text-bluegrays-templetongray;
-    }
-
     h1 {
         @apply font-zillaslab font-bold text-redblacks-blackplum text-5xl leading-[65.8px] uppercase;
     }
