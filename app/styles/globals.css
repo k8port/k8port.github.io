@@ -6,6 +6,72 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
+    ── Semantic theme tokens (Phase 0 scaffolding) ─────────────────────────────
+    These semantic roles compile to `var(--color-*)` / `var(--shadow-*)` utilities
+    (e.g. `bg-surface`, `text-heading`, `border-border`, `shadow-elevated`).
+    Light defaults live here in `@theme`; the `.dark` block below overrides the
+    same variables, so any element using a semantic utility swaps automatically
+    when `.dark` is present on <html>.
+
+    NOTE: the light/dark values below are PLACEHOLDERS sourced from the existing
+    palette (`theme_light.ts` / `theme_dark.ts` and the color spectrum files).
+    The exact light->dark mapping is still owner-owned (decision #1) — adjust the
+    values here in one place; component markup does not need to change.
+*/
+@theme {
+    /* Surfaces */
+    --color-surface: oklch(0.86 0.0245 180.55); /* brand-primary */
+    --color-surface-raised: oklch(0.96 0.0125 164.8); /* brand-secondaryvar */
+    --color-surface-elevated: oklch(0.98 0.0054 117.92); /* brand-secondary */
+    --color-surface-muted: oklch(0.9 0.0916 112.82); /* brand-quinary */
+
+    /* Content / text */
+    --color-content: oklch(0.13 0.0239 20.94); /* redblacks-vampireblack */
+    --color-content-muted: oklch(0.61 0.0175 196.7); /* bluegrays-templetongray */
+    --color-heading: oklch(0.3 0.02 339.93); /* redblacks-blackplum */
+    --color-content-inverse: oklch(0.92 0.0029 84.56); /* redwhites-platinum */
+
+    /* Accents */
+    --color-accent: oklch(0.75 0.15387 166.913); /* collection-caribbeangreen */
+    --color-accent-strong: oklch(0.37 0.0643 210.32); /* collection-midnightgreen */
+    --color-danger: oklch(0.59 0.2198 23.84); /* collection-alizarincrimson */
+    --color-link: #0071c5; /* blueblues-intel-blue */
+
+    /* Borders */
+    --color-border: oklch(0.96 0.0125 164.8); /* brand-secondaryvar */
+    --color-border-strong: oklch(0.86 0.0245 180.55); /* brand-primary */
+}
+
+/* Dark overrides: same variables, dark palette values. */
+.dark {
+    /* Surfaces */
+    --color-surface: oklch(0.27 0.0963 303.66); /* dkprimary */
+    --color-surface-raised: oklch(0.3 0.02 339.93); /* dksecondaryvar */
+    --color-surface-elevated: oklch(0.15 0.0641 304.15); /* dksecondary */
+    --color-surface-muted: oklch(0.25 0.0259 326.31); /* dkquinary */
+
+    /* Content / text */
+    --color-content: oklch(0.92 0.0029 84.56); /* redwhites-platinum */
+    --color-content-muted: oklch(0.71 0.0278 239.25); /* bluegrays-cadetgray */
+    --color-heading: oklch(0.99 0.0029 84.56); /* redwhites-vistawhite */
+    --color-content-inverse: oklch(0.3 0.02 339.93); /* redblacks-blackplum */
+
+    /* Accents */
+    --color-accent: oklch(0.75 0.15387 166.913); /* dkaccentgreen */
+    --color-accent-strong: oklch(0.65 0.11729 180.8506); /* dkaccentgreenvar */
+    --color-danger: oklch(0.63 0.2576 29.18); /* dkaccentred */
+    --color-link: oklch(0.37 0.1362 285.87); /* dkaccentblue */
+
+    /* Borders */
+    --color-border: oklch(0.39 0.0303 332.62); /* dksenaryvar */
+    --color-border-strong: oklch(0.28 0.0773 2.1); /* dktertiaryvar */
+
+    /* Elevation */
+    --shadow-elevated:
+        0px 8px 16px 0px rgba(255, 255, 255, 0.16), 0px 2px 4px 0px rgba(255, 255, 255, 0.04); /* dkShadow2 */
+}
+
+/*
     The default border color has changed to `currentColor` in Tailwind CSS v4,
     so we've added these compatibility styles to make sure everything still
     looks the same as it did with Tailwind CSS v3.
@@ -25,6 +91,12 @@
     :root {
         --footer-margin: 2rem;
         --header-height: 3.6rem;
+        /* Semantic elevation shadow (light default; overridden under .dark).
+           Defined as a plain custom property + manual utility so the box-shadow
+           swaps under .dark — Tailwind's `@theme --shadow-*` would inline the
+           value and prevent swapping. */
+        --shadow-elevated:
+            0px 8px 16px 0px rgba(96, 97, 112, 0.16), 0px 2px 4px 0px rgba(40, 41, 61, 0.04); /* btn shadow2 */
     }
     .font-outline {
         -webkit-text-stroke: 1px var(--brand-secondaryvar);
@@ -455,6 +527,11 @@
     /* Header & Brand Styles */
     .header-shadow {
         box-shadow: 0 0 40px 0 rgba(37, 43, 47, 0.5);
+    }
+
+    /* Semantic elevation utility — box-shadow swaps via --shadow-elevated under .dark. */
+    .shadow-elevated {
+        box-shadow: var(--shadow-elevated);
     }
 
     .brand-style {

@@ -16,7 +16,7 @@ export default function HomePage() {
             </section>
 
             <section id="contact" className="relative flex flex-col min-h-screen">
-                <CollaborateContainer className="flex-grow" />
+                <CollaborateContainer className="grow" />
                 <Footer className="mt-auto" />
             </section>
         </div>

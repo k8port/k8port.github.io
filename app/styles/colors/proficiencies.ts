@@ -1,4 +1,4 @@
-export const proficiencyScaleColors = {
+export const proficiencies = {
     novice: 'oklch(0.9 0.05 200)',
     advbegin: 'oklch(0.76 0.08, 195)',
     competent: 'oklch(0.62 0.11 190)',

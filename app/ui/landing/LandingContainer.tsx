@@ -5,7 +5,6 @@ import Image from 'next/image';
 import RainbowGradientOverlay from '../background/RainboxGradientOverlay';
 import OpacityOverlay from '../background/OpacityOverlay';
 import LandingContent from './LandingContent';
-// import ScrollingBanner from '../background/ScrollingBanner';
 
 export const LandingContainer = () => {
     const width = 3200;
@@ -23,14 +22,14 @@ export const LandingContainer = () => {
                 className={`
                     priority
                     absolute inset-0
-                    aspect-[1/5]
-                    lg:aspect-[1/20]
-                    dt-lg:aspect-[1/30]
-                    xl:aspect-[1/40]
-                    2xl:aspect-[1/50]
-                    3xl:aspect-[1/60]
-                    4xl:aspect-[1/70]
-                    5xl:aspect-[1/80]
+                    aspect-1/5
+                    lg:aspect-1/20
+                    dt-lg:aspect-1/30
+                    xl:aspect-1/40
+                    2xl:aspect-1/50
+                    3xl:aspect-1/60
+                    4xl:aspect-1/70
+                    5xl:aspect-1/80
                     object-cover z-0
                     max-w-full
                     max-h-full

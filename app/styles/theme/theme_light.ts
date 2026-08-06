@@ -37,8 +37,8 @@ export const theme = {
             scarlett: 'oklch(0.64 0.2484 31.02)',
             screamingreen: 'oklch(0.89 0.2119 144.06)',
             verylightmalachite: 'oklch(0.84 0.1805 149.32)',
-            africanviolet: 'oklch(0.6781 0.0978 319.19)',
-        },
+            africanviolet: 'oklch(0.6781 0.0978 319.19)'
+        }
     },
     shadows: {
         btn: {

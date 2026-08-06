@@ -30,7 +30,7 @@ export const III = ({ className, insertNameHere, insertJobTitleHere }: IIIProps)
                 <ProfilePic
                     imageWidth={2038}
                     imageHeight={1840}
-                    className="rounded-full shadow-btn-shadow aspect-[1038/920]"
+                    className="rounded-full shadow-btn-shadow aspect-1038/920"
                     profilePicSrc="/images/abstract-profile/abstract-profile-sunset.svg"
                     profilePicDescription="Profile Picture"
                     restingOpacity={0.65}

@@ -124,8 +124,8 @@ export default function NavMenu({ className }: NavMenuProps) {
             <nav
                 aria-label="Mobile"
                 className={`
-                    block lg:hidden
-                    w-24 bg-brand-quinary
+                    flex flex-col lg:hidden
+                    w-32 bg-brand-quinary
                     shadow-lg rounded-md
                     absolute top-12 right-0
                     border border-solid border-brand-quinary
@@ -137,7 +137,7 @@ export default function NavMenu({ className }: NavMenuProps) {
                         key={item.href}
                         item={item}
                         onNavigate={onNavigate}
-                        className="disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="block w-full px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                 ))}
             </nav>

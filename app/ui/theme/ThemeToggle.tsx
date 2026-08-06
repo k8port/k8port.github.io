@@ -23,7 +23,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
                 'border border-collection-caribbeangreen/60',
                 'transition-colors duration-300 cursor-pointer',
                 'focus:outline-none focus-visible:ring-2 focus-visible:ring-collection-caribbeangreen',
-                isDark ? 'bg-dkdarksecondaryvar' : 'bg-brand-tertiary',
+                isDark ? 'bg-dksecondaryvar' : 'bg-brand-tertiary',
                 className
             )}
         >
@@ -53,7 +53,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
                 )}
             >
                 {isDark ? (
-                    <Moon className="w-3 h-3 text-dkdarkprimary" aria-hidden="true" />
+                    <Moon className="w-3 h-3 text-dkprimary" aria-hidden="true" />
                 ) : (
                     <Sun className="w-3 h-3 text-collection-portlandorangered" aria-hidden="true" />
                 )}
