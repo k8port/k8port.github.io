@@ -28,11 +28,11 @@ export const ButtonStyle = ({
     onClick,
 }: ButtonStyleProps) => {
     let styleClass =
-        'bg-brand-tertiary border border-solid border-brand-secondaryvar !text-redblacks-arsenic';
-    let hoverStyleClass = 'hover:bg-brand-quinary hover:!text-redblacks-vampireblack';
-    let activeStyleClass = 'active:bg-brand-tertiaryvar active:!text-accent-accentbluevar';
+        'bg-surface-raised border border-solid border-border !text-content';
+    let hoverStyleClass = 'hover:bg-surface-muted hover:!text-heading';
+    let activeStyleClass = 'active:bg-surface-elevated active:!text-accent';
     let loadingStyleClass =
-        '[&[data-loading=true]]:bg-accent-accentbluevar [&[data-loading=true]]:border-brand-primary [&[data-loading=true]]:!text-brand-secondaryvar';
+        '[&[data-loading=true]]:bg-surface-elevated [&[data-loading=true]]:border-border [&[data-loading=true]]:!text-content';
     let sizeClass = 'px-28 py-5';
     const iconPositionClass = iconPosition;
     let borderRadiusClass = 'rounded-sm';
@@ -40,24 +40,24 @@ export const ButtonStyle = ({
 
     if (style === 'outlined') {
         styleClass =
-            'bg-accent-accentpink border border-solid border-accent-accentpinkvar !text-redblacks-blackraspberry';
+            'bg-accent/20 border border-solid border-accent !text-accent-strong';
         hoverStyleClass =
-            'hover:bg-accent-accentredvar hover:border-2 hover:border-accent-accentred hover:!text-redblacks-blackraspberry';
+            'hover:bg-accent/40 hover:border-2 hover:border-accent hover:!text-heading';
         activeStyleClass =
-            'active:bg-redblacks-blackraspberry active:border-collection-portlandorangered active:!text-redgrays-silverpink';
+            'active:bg-accent/60 active:border-accent-strong active:!text-content';
         loadingStyleClass =
-            '[&[data-loading=true]]:bg-accent-accentpink [&[data-loading=true]]:border-accent-accentpinkvar [&[data-loading=true]]:!text-redblacks-blackraspberry';
+            '[&[data-loading=true]]:bg-accent/30 [&[data-loading=true]]:border-accent [&[data-loading=true]]:!text-accent-strong';
     }
 
     if (style === 'ghost') {
         styleClass =
-            'bg-brand-quinary/75 border border-solid border-brand-quaternary !text-redblacks-vampireblack';
+            'bg-surface-muted/80 border border-solid border-border !text-content';
         hoverStyleClass =
-            'hover:bg-accent-accentpinkvar/75 hover:border-2 hover-border-brand-secondaryvar hover:!text-redwhites-vistawhite shadow-btn-shadow';
+            'hover:bg-surface-elevated hover:border-2 hover:border-border-strong hover:!text-heading shadow-btn-shadow';
         activeStyleClass =
-            'active:bg-accent-accentbluevar active:border-brand-tertiary active:!text-brand-septenary';
+            'active:bg-surface-raised active:border-border active:!text-accent';
         loadingStyleClass =
-            '[&[data-loading=true]]:bg-accent-accentgreen [&[data-loading=true]]:border-brand-quinaryvar [&[data-loading=true]]:!text-accent-accentbluevar';
+            '[&[data-loading=true]]:bg-surface-elevated [&[data-loading=true]]:border-border [&[data-loading=true]]:!text-content';
     }
 
     if (size === 'medium') {

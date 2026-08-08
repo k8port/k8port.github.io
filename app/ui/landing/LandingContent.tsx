@@ -33,7 +33,7 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
             {/* Mobile hero */}
             <div className="flex flex-col gap-6 mt-10 md:hidden">
                 <Greeting
-                    className="greeting text-5xl text-brand-septenary font-outline ml-26"
+                    className="greeting text-5xl text-accent font-outline ml-26"
                     greetingText="Hello!"
                 />
                 <III
@@ -70,7 +70,7 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
                             greeting
                             text-4xl md:text-6xl lg:text-7xl
                             text-center
-                            text-brand-septenary
+                            text-accent
                             font-outline
                         `}
                         greetingText="Hello!"
@@ -80,14 +80,14 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
                         <Display
                             className="h-auto text-center animate-slide-in-left font-semibold"
                             displayText="Kate Portalatin"
-                            textColor="text-collection-africanviolet"
+                            textColor="text-accent-strong"
                             textSize="text-5xl"
                         />
                         <Headline
                             className="mt-4 h-auto text-center animate-slide-in-left"
                             headlineText="Full Stack Product Engineer 🜉 Data Intensive Frontends"
                             headlineStyle="default"
-                            textColor="text-collection-persiangreen"
+                            textColor="text-accent"
                             textSize="text-lg"
                         />
                     </div>

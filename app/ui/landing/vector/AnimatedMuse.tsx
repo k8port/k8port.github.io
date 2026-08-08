@@ -1,10 +1,11 @@
+'use client';
 // src/components/AnimatedMuseSVG.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MUSES } from '../../../data/MUSES';
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
-const isFalling = () => Math.random() < 0.2;
+const isFalling = () => Math.random() < 0.45;
 
 interface AnimatedMuseSVGProps {
     className?: string;

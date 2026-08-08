@@ -32,7 +32,7 @@ export default function ContentBox({
     const ArrowIcon = getFontAwesomeIcon('Right Arrow');
 
     return (
-        <div className="flex flex-col w-sm h-auto items-center relative bg-brand-secondary border border-solid border-greenwhites-featherwhite rounded-lg">
+        <div className="flex flex-col w-sm h-auto items-center relative bg-surface-raised border border-solid border-border rounded-lg">
             {!image && <PlaceholderPicture className="self-stretch h-3xs object-cover w-auto" />}
 
             {image && (
@@ -58,11 +58,11 @@ export default function ContentBox({
             )}
 
             {has_button && (
-                <div className="flex items-center gap-2 p-4 w-full border-t border-greenwhites-featherwhite">
+                <div className="flex items-center gap-2 p-4 w-full border-t border-border">
                     {portfolioRoute && (
                         <Link
                             href={portfolioRoute}
-                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent-accentredvar hover:text-accent-accentpink hover:text-lg text-base whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent hover:text-accent-strong hover:text-lg text-base whitespace-nowrap"
                         >
                             <span>View Project</span>
                             {ArrowIcon && <ArrowIcon className="w-4 h-4 hover:w-5 hover:h-5" />}
@@ -74,7 +74,7 @@ export default function ContentBox({
                             href={externalLiveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent-accentredvar hover:text-accent-accentpink hover:text-lg text-base whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent hover:text-accent-strong hover:text-lg text-base whitespace-nowrap"
                         >
                             <span>Live App</span>
                             {ArrowIcon && <ArrowIcon className="w-4 h-4 hover:w-5 hover:h-5" />}
@@ -92,7 +92,7 @@ export default function ContentBox({
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent-accentredvar hover:text-accent-accentpink hover:text-lg text-base whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-4 py-2 cursor-pointer text-accent hover:text-accent-strong hover:text-lg text-base whitespace-nowrap"
                         >
                             {GitHubIcon && <GitHubIcon className="w-4 h-4 hover:w-5 hover:h-5" />}
                             <span>GitHub</span>

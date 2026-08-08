@@ -31,7 +31,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const [theme, setThemeState] = useState<Theme>('light');
 
     useEffect(() => {
-        setThemeState(getInitialTheme());
+        const initialTheme = getInitialTheme();
+        setThemeState(initialTheme);
+        applyThemeClass(initialTheme);
     }, []);
 
     const setTheme = useCallback((next: Theme) => {

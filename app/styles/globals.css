@@ -42,6 +42,23 @@
     --color-border-strong: oklch(0.86 0.0245 180.55); /* brand-primary */
 }
 
+:root {
+    --surface: var(--color-brand-primary);
+    --surface-raised: var(--color-brand-secondaryvar);
+    --surface-elevated: var(--color-brand-secondary);
+    --surface-muted: var(--color-brand-quinary);
+    --text-primary: var(--color-redblacks-vampireblack);
+    --text-muted: var(--color-bluegrays-templetongray);
+    --text-heading: var(--color-redblacks-blackplum);
+    --text-inverse: var(--color-redwhites-platinum);
+    --accent: var(--color-collection-caribbeangreen);
+    --accent-strong: var(--color-collection-midnightgreen);
+    --danger: var(--color-collection-alizarincrimson);
+    --border: var(--color-brand-secondaryvar);
+    --border-strong: var(--color-brand-primary);
+    --link: var(--color-blueblues-intel-blue);
+}
+
 /* Dark overrides: same variables, dark palette values. */
 .dark {
     /* Surfaces */
@@ -65,6 +82,21 @@
     /* Borders */
     --color-border: oklch(0.39 0.0303 332.62); /* dksenaryvar */
     --color-border-strong: oklch(0.28 0.0773 2.1); /* dktertiaryvar */
+
+    --surface: var(--color-surface);
+    --surface-raised: var(--color-surface-raised);
+    --surface-elevated: var(--color-surface-elevated);
+    --surface-muted: var(--color-surface-muted);
+    --text-primary: var(--color-content);
+    --text-muted: var(--color-content-muted);
+    --text-heading: var(--color-heading);
+    --text-inverse: var(--color-content-inverse);
+    --accent: var(--color-accent);
+    --accent-strong: var(--color-accent-strong);
+    --danger: var(--color-danger);
+    --border: var(--color-border);
+    --border-strong: var(--color-border-strong);
+    --link: var(--color-link);
 
     /* Elevation */
     --shadow-elevated:
@@ -104,35 +136,44 @@
 
     html,
     body {
-        @apply font-josefinsans text-[14px] leading-[17.7px] text-redblacks-vampireblack;
+        @apply font-josefinsans text-[14px] leading-[17.7px];
+        color: var(--text-primary);
+        background-color: var(--surface);
     }
 
     h1 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-5xl leading-[65.8px] uppercase;
+        @apply font-zillaslab font-bold text-5xl leading-[65.8px] uppercase;
+        color: var(--text-heading);
     }
 
     h2 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-[40px] leading-[54.8px] capitalize;
+        @apply font-zillaslab font-bold text-[40px] leading-[54.8px] capitalize;
+        color: var(--text-heading);
     }
 
     h3 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-[32px] tracking-[0] leading-[43.9px] capitalize;
+        @apply font-zillaslab font-bold text-[32px] tracking-[0] leading-[43.9px] capitalize;
+        color: var(--text-heading);
     }
 
     h4 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-2xl tracking-[0] leading-[32.9px] capitalize;
+        @apply font-zillaslab font-bold text-2xl tracking-[0] leading-[32.9px] capitalize;
+        color: var(--text-heading);
     }
 
     h5 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-xl tracking-[0] leading-[27.4px] capitalize;
+        @apply font-zillaslab font-bold text-xl tracking-[0] leading-[27.4px] capitalize;
+        color: var(--text-heading);
     }
 
     h6 {
-        @apply font-zillaslab font-bold text-redblacks-blackplum text-base tracking-[0] leading-[21.9px] capitalize;
+        @apply font-zillaslab font-bold text-base tracking-[0] leading-[21.9px] capitalize;
+        color: var(--text-heading);
     }
 
     p {
         @apply font-josefinsans text-base leading-[18.7px];
+        color: var(--text-primary);
     }
 
     .paragraph-base {
@@ -156,7 +197,8 @@
     }
 
     .nav-menu-item {
-        @apply font-josefinsans font-normal text-bluegrays-stormcloud text-lg leading-4 lowercase not-italic;
+        @apply font-josefinsans font-normal text-lg leading-4 lowercase not-italic;
+        color: var(--text-muted);
     }
 
     .greeting {

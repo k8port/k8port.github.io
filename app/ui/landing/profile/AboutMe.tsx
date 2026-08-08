@@ -12,13 +12,14 @@ export default function AboutMe({ className }: AboutMeProps) {
                 className={`
                     relative
                     w-full
-                    bg-brand-secondary/60
+                    bg-surface-raised/80
                     rounded-2xl
                     p-6 lg:p-8
+                    border border-border
                 `}
             >
                 <div className="flex items-start gap-4 lg:gap-8 p-2 lg:p-4">
-                    <span className="text-redblacks-blackplum text-xl md:text-xl lg:text-2xl font-lobster">
+                    <span className="text-heading text-xl md:text-xl lg:text-2xl font-lobster">
                         Interests
                     </span>
                     <FaHeart color="#FF0000" size={25} />
@@ -27,7 +28,7 @@ export default function AboutMe({ className }: AboutMeProps) {
                     <p
                         className={`
                             pt-t
-                            text-redblacks-blackplum
+                            text-content
                             paragraph-small mlg:text-base
                             leading-5 mlg:leading-6 text-pretty
                         `}
@@ -40,7 +41,7 @@ export default function AboutMe({ className }: AboutMeProps) {
                     </p>
                 </div>
                 <div className="flex items-start gap-4 lg:gap-8 p-2 lg:p-4">
-                    <span className="text-redblacks-blackplum text-xl md:text-xl lg:text-2xl font-lobster">
+                    <span className="text-heading text-xl md:text-xl lg:text-2xl font-lobster">
                         About Me
                     </span>
                 </div>
@@ -48,7 +49,7 @@ export default function AboutMe({ className }: AboutMeProps) {
                     <p
                         className={`
                             pt-t
-                            text-redblacks-blackplum
+                            text-content
                             paragraph-small mlg:text-base
                             leading-5 mlg:leading-6 text-pretty
                         `}

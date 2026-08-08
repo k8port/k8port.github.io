@@ -125,10 +125,10 @@ export default function NavMenu({ className }: NavMenuProps) {
                 aria-label="Mobile"
                 className={`
                     flex flex-col lg:hidden
-                    w-32 bg-brand-quinary
+                    w-32 bg-surface-raised
                     shadow-lg rounded-md
                     absolute top-12 right-0
-                    border border-solid border-brand-quinary
+                    border border-solid border-border
                     z-50
                 `}
             >
@@ -164,7 +164,7 @@ function NavLink({
                 className={clsx(
                     'transition-opacity cursor-not-allowed opacity-50',
                     className,
-                    'text-greengrays-nickel'
+                    'text-content-muted'
                 )}
                 title="coming soon"
             >
@@ -179,10 +179,8 @@ function NavLink({
                 className={clsx(
                     'transition-opacity',
                     className,
-                    isActive ? 'text-collection-midnightgreen' : 'text-greengrays-nickel',
-                    isActive
-                        ? 'hover:text-collection-alizarincrimson'
-                        : 'hover:text-bluewhites-ghostwhite',
+                    isActive ? 'text-heading' : 'text-content-muted',
+                    isActive ? 'hover:text-accent' : 'hover:text-content',
                     pending && 'opacity-50',
                     pending && 'cursor-not-allowed'
                 )}

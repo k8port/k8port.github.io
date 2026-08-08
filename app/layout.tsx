@@ -60,9 +60,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     font-josefinsans
                     flex
                     flex-col
-                    bg-brand-primary
                     antialiased
                     overflow-x-hidden
+                    bg-surface
+                    text-content
                 `}
             >
                 <ThemeProvider>
@@ -70,7 +71,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         className={`
                             sticky top-0 left-0
                             w-full h-16 z-99
-                            bg-brand-secondaryvar/65
+                            relative overflow-hidden
+                            bg-surface-raised/70 dark:bg-surface-elevated/90
                             bg-[url('/images/brand/waves_pattern.png')]
                             bg-repeat-x
                             bg-center

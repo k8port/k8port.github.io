@@ -20,17 +20,17 @@ export default function ThemeToggle({ className }: { className?: string }) {
             className={clsx(
                 'relative inline-flex items-center shrink-0',
                 'w-14 h-7 rounded-full px-1',
-                'border border-collection-caribbeangreen/60',
+                'border border-border',
                 'transition-colors duration-300 cursor-pointer',
-                'focus:outline-none focus-visible:ring-2 focus-visible:ring-collection-caribbeangreen',
-                isDark ? 'bg-dksecondaryvar' : 'bg-brand-tertiary',
+                'focus:outline-none focus-visible:ring-2 focus-visible:ring-accent',
+                isDark ? 'bg-surface-elevated' : 'bg-surface-raised',
                 className
             )}
         >
             <Sun
                 className={clsx(
                     'absolute left-1.5 w-4 h-4 transition-opacity duration-300',
-                    'text-collection-portlandorangered',
+                    'text-danger',
                     isDark ? 'opacity-40' : 'opacity-100'
                 )}
                 aria-hidden="true"
@@ -38,7 +38,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
             <Moon
                 className={clsx(
                     'absolute right-1.5 w-4 h-4 transition-opacity duration-300',
-                    'text-redwhites-platinum',
+                    'text-content-inverse',
                     isDark ? 'opacity-100' : 'opacity-40'
                 )}
                 aria-hidden="true"
@@ -47,15 +47,15 @@ export default function ThemeToggle({ className }: { className?: string }) {
             <span
                 className={clsx(
                     'relative z-10 inline-flex items-center justify-center',
-                    'w-5 h-5 rounded-full bg-redwhites-snow shadow-md',
+                    'w-5 h-5 rounded-full bg-surface shadow-md',
                     'transform transition-transform duration-300 ease-in-out',
                     isDark ? 'translate-x-7' : 'translate-x-0'
                 )}
             >
                 {isDark ? (
-                    <Moon className="w-3 h-3 text-dkprimary" aria-hidden="true" />
+                    <Moon className="w-3 h-3 text-content-inverse" aria-hidden="true" />
                 ) : (
-                    <Sun className="w-3 h-3 text-collection-portlandorangered" aria-hidden="true" />
+                    <Sun className="w-3 h-3 text-danger" aria-hidden="true" />
                 )}
             </span>
         </button>
