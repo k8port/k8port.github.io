@@ -333,6 +333,10 @@
 }
 
 @layer utilities {
+    .bg-waves-pattern {
+        background-image: url('/images/brand/waves_pattern.png');
+    }
+
     /* Scrollbar Utilities */
     .scrollbar-hide {
         scrollbar-width: none;

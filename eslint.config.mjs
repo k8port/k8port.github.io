@@ -55,6 +55,10 @@ const eslintConfig = [
             '@typescript-eslint/no-explicit-any': 'warn',
             'react/react-in-jsx-scope': 'off',
             'no-console': ['error', { allow: ['warn', 'error'] }],
+            // React Compiler rules from eslint-plugin-react-hooks v6 — downgrade to warn
+            // to avoid blocking builds until the flagged patterns are refactored.
+            'react-hooks/refs': 'warn',
+            'react-hooks/static-components': 'warn',
         },
     },
 ];

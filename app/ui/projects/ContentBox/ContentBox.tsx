@@ -5,6 +5,9 @@ import Content from './Content';
 import { ImageFrame } from '../../ImageFrame';
 import { getFontAwesomeIcon } from '@/lib/actions/getFontAwesomeIcon';
 
+const GitHubIcon = getFontAwesomeIcon('GitHub');
+const ArrowIcon = getFontAwesomeIcon('Right Arrow');
+
 interface ContentBoxProps {
     category?: string;
     title?: string;
@@ -28,9 +31,6 @@ export default function ContentBox({
     externalLiveUrl,
     liveStatus,
 }: ContentBoxProps) {
-    const GitHubIcon = getFontAwesomeIcon('GitHub');
-    const ArrowIcon = getFontAwesomeIcon('Right Arrow');
-
     return (
         <div className="flex flex-col w-sm h-auto items-center relative bg-surface-raised border border-solid border-border rounded-lg">
             {!image && <PlaceholderPicture className="self-stretch h-3xs object-cover w-auto" />}

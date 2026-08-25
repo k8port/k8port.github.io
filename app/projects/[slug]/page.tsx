@@ -3,15 +3,15 @@ import { notFound } from 'next/navigation';
 import { allProjects, getProjectBySlug } from '@/lib/projects';
 
 interface ProjectPageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
     return allProjects.map(project => ({ slug: project.slug }));
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-    const { slug } = params;
+export default async function ProjectPage({ params }: ProjectPageProps) {
+    const { slug } = await params;
     const project = getProjectBySlug(slug);
 
     if (!project || project.visibility === 'disabled') {

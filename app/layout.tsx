@@ -9,7 +9,7 @@ interface Metadata {
     };
 }
 import './styles/globals.css';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './ui/header/Header';
 import { ThemeProvider } from './ui/theme/ThemeProvider';
@@ -85,9 +85,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <main>{children}</main>
                 </ThemeProvider>
             </body>
-            <Analytics />
-            <SpeedInsights />
-            {/* <Footer className='fixed bottom-0 z-50' /> */}
         </html>
     );
 }

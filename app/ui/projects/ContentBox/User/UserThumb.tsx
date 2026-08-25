@@ -1,12 +1,13 @@
 import { getFontAwesomeIcon } from '@/lib/actions/getFontAwesomeIcon';
 import React from 'react';
 
+const IconComponent = getFontAwesomeIcon('User');
+
 interface UserThumbProps {
     size: 'm' | 's';
 }
 
 export default function UserThumb({ size }: UserThumbProps) {
-    const IconComponent = getFontAwesomeIcon('User');
     return (
         <div
             className={`
