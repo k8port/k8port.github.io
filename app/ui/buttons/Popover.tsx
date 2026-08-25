@@ -43,7 +43,7 @@ export function Popover({ triggerLabel, children }: PopoverProps) {
             {open && (
                 <div
                     ref={panelRef}
-                    className="absolute right-0 mt-2 w-56 rounded-md shadow-lg ring-1 bg-secondary ring-1 ring-accent-accentgreenvar ring-opacity-5 z-50"
+                    className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-secondary ring-1 ring-accent-accentgreenvar ring-opacity-5 z-50"
                     role="dialog"
                     aria-labelledby="options-menu"
                 >

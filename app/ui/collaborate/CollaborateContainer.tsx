@@ -3,7 +3,7 @@
 import { HTMLAttributes } from 'react';
 import ContactForm from './ContactForm';
 import Image from 'next/image';
-import OpacityOverlay from '../background/OpacityOverlay';
+import DarkImageOpacityOverlay from '../background/DarkImageOpacityOverlay';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -14,26 +14,27 @@ export default function CollaborateContainer({ className, ...rest }: Collaborate
         <div
             id="collaborate"
             {...rest}
-            className={clsx('relative flex items-center justify-center', className)}
+            className={clsx('relative isolate flex items-center justify-center', className)}
         >
             {/* full-screen background image */}
             <Image
+                priority
                 src="/images/arcade-girl.png"
                 alt="Arcade Girl"
                 fill
-                className={'object-cover object-[center_12%] -z-10 '}
+                className={'object-cover object-[center_12%] -z-10 dark:brightness-150 dark:contrast-110'}
             />
 
             {/* overlay */}
-            <OpacityOverlay className="absolute inset-0 -z-10" />
+            <DarkImageOpacityOverlay className="absolute inset-0 -z-10" />
 
             {/* content form wrapper */}
             <div className="w-full max-w-3xl md:max-w-4xl p-6 md:p-10 bg-transparent rounded-lg">
                 <h2
                     className="caption-heavy text-xl text-center 
                     mb-8 tracking-wider 
-                    text-collection-midnightgreen
-                    text-shadow-lg text-shadow-brand-primary/80
+                    text-midnightgreen
+                    text-shadow-lg dark:text-content 
                 "
                 >
                     CONTACT&nbsp;ME

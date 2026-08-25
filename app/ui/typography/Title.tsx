@@ -11,9 +11,9 @@ export const Title = ({ titleText, fontWeight }: TitleProps) => {
         <p
             className={`
             relative 
-            w-[445px] 
-            mt-[-1.00px] 
-            font-spacegrotesk 
+            w-111.25 
+            mt-[px] 
+            font-josefinsans
             ${fontWeightClass} 
             text-redblacks-blackplum 
             text-xl 

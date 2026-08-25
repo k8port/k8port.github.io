@@ -9,7 +9,7 @@ const OpacityOverlay = forwardRef<HTMLDivElement, OpacityOverlayProps>(({ classN
         <div
             ref={ref}
             className={`
-                bg-gradient-to-b from-brand-primary
+                bg-linear-to-b from-brand-primary
                 to-brand-primary/0
                 ${className}
             `}

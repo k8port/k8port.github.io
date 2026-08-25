@@ -124,11 +124,11 @@ export default function NavMenu({ className }: NavMenuProps) {
             <nav
                 aria-label="Mobile"
                 className={`
-                    block lg:hidden
-                    w-24 bg-brand-quinary
+                    flex flex-col lg:hidden
+                    w-32 bg-surface-raised
                     shadow-lg rounded-md
                     absolute top-12 right-0
-                    border border-solid border-brand-quinary
+                    border border-solid border-border
                     z-50
                 `}
             >
@@ -137,7 +137,7 @@ export default function NavMenu({ className }: NavMenuProps) {
                         key={item.href}
                         item={item}
                         onNavigate={onNavigate}
-                        className="disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="block w-full px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                 ))}
             </nav>
@@ -164,7 +164,7 @@ function NavLink({
                 className={clsx(
                     'transition-opacity cursor-not-allowed opacity-50',
                     className,
-                    'text-greengrays-nickel'
+                    'text-content-muted'
                 )}
                 title="coming soon"
             >
@@ -179,10 +179,8 @@ function NavLink({
                 className={clsx(
                     'transition-opacity',
                     className,
-                    isActive ? 'text-collection-midnightgreen' : 'text-greengrays-nickel',
-                    isActive
-                        ? 'hover:text-collection-alizarincrimson'
-                        : 'hover:text-bluewhites-ghostwhite',
+                    isActive ? 'text-heading' : 'text-content-muted',
+                    isActive ? 'hover:text-accent' : 'hover:text-content',
                     pending && 'opacity-50',
                     pending && 'cursor-not-allowed'
                 )}

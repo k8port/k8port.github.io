@@ -12,8 +12,8 @@ export const Subheader = ({ subheaderText, subheaderStyle }: SubheaderProps) => 
             className={`
             relative 
             w-445px 
-            mt-[-1.00px] 
-            font-spacegrotesk 
+            -mt-px 
+            font-josefinsans
             ${fontWeightClass} 
             text-redblacks-blackplum 
             text-base

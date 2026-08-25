@@ -28,46 +28,51 @@ export const ButtonStyle = ({
     onClick,
 }: ButtonStyleProps) => {
     let styleClass =
-        'bg-brand-tertiary border border-solid border-brand-secondaryvar !text-redblacks-arsenic';
-    let hoverStyleClass = 'hover:bg-brand-quinary hover:!text-redblacks-vampireblack';
-    let activeStyleClass = 'active:bg-brand-tertiaryvar active:!text-accent-accentbluevar';
+        'bg-surface-raised border border-solid border-border !text-content';
+    let hoverStyleClass = 'hover:bg-surface-muted hover:!text-heading';
+    let activeStyleClass = 'active:bg-surface-elevated active:!text-accent';
     let loadingStyleClass =
-        '[&[data-loading=true]]:bg-accent-accentbluevar [&[data-loading=true]]:border-brand-primary [&[data-loading=true]]:!text-brand-secondaryvar';
-    let sizeClass = 'px-28 py-5';
+        '[&[data-loading=true]]:bg-surface-elevated [&[data-loading=true]]:border-border [&[data-loading=true]]:!text-content';
+    let sizeClass: string;
+    let textSizeClass: string;
     const iconPositionClass = iconPosition;
     let borderRadiusClass = 'rounded-sm';
     const IconComponent = buttonIconSelection ?? null;
 
     if (style === 'outlined') {
         styleClass =
-            'bg-accent-accentpink border border-solid border-accent-accentpinkvar !text-redblacks-blackraspberry';
+            'bg-accent/20 border border-solid border-accent !text-accent-strong';
         hoverStyleClass =
-            'hover:bg-accent-accentredvar hover:border-2 hover:border-accent-accentred hover:!text-redblacks-blackraspberry';
+            'hover:bg-accent/40 hover:border-2 hover:border-accent hover:!text-heading';
         activeStyleClass =
-            'active:bg-redblacks-blackraspberry active:border-collection-portlandorangered active:!text-redgrays-silverpink';
+            'active:bg-accent/60 active:border-accent-strong active:!text-content';
         loadingStyleClass =
-            '[&[data-loading=true]]:bg-accent-accentpink [&[data-loading=true]]:border-accent-accentpinkvar [&[data-loading=true]]:!text-redblacks-blackraspberry';
+            '[&[data-loading=true]]:bg-accent/30 [&[data-loading=true]]:border-accent [&[data-loading=true]]:!text-accent-strong';
     }
 
     if (style === 'ghost') {
         styleClass =
-            'bg-brand-quinary/75 border border-solid border-brand-quaternary !text-redblacks-vampireblack';
+            'bg-surface-muted/80 border border-solid border-border !text-content';
         hoverStyleClass =
-            'hover:bg-accent-accentpinkvar/75 hover:border-2 hover-border-brand-secondaryvar hover:!text-redwhites-vistawhite shadow-btn-shadow';
+            'hover:bg-surface-elevated hover:border-2 hover:border-border-strong hover:!text-heading shadow-btn-shadow';
         activeStyleClass =
-            'active:bg-accent-accentbluevar active:border-brand-tertiary active:!text-brand-septenary';
+            'active:bg-surface-raised active:border-border active:!text-accent';
         loadingStyleClass =
-            '[&[data-loading=true]]:bg-accent-accentgreen [&[data-loading=true]]:border-brand-quinaryvar [&[data-loading=true]]:!text-accent-accentbluevar';
+            '[&[data-loading=true]]:bg-surface-elevated [&[data-loading=true]]:border-border [&[data-loading=true]]:!text-content';
     }
 
     if (size === 'medium') {
         sizeClass = 'px-12 py-4';
+        textSizeClass = 'text-base';
     } else if (size === 'small') {
         sizeClass = 'px-10 py-3';
+        textSizeClass = 'text-sm';
     } else if (size === 'large') {
         sizeClass = 'px-28 py-5';
+        textSizeClass = 'text-lg';
     } else {
         sizeClass = 'px-8 py-2';
+        textSizeClass = 'text-[10.5px]';
     }
 
     if (borderRadius === 'eight') {
@@ -103,7 +108,7 @@ export const ButtonStyle = ({
                 className={`
                 inline-flex 
                 items-end 
-                [&[data-loading='true']]:items-center
+                data-[loading='true']:items-center
                 gap-1.5 
                 relative 
                 flex-[0_0_auto]
@@ -112,17 +117,17 @@ export const ButtonStyle = ({
                 <div
                     className={`
                     relative
-                    w-fit mt-[-1.00px] 
+                    w-fit mt-[px] 
                     whitespace-nowrap 
                     not-italic
-                    text-[10.5px]
+                    ${textSizeClass}
                     capitalize
-                    [&[data-loading='true']]:text-transparent
+                    data-[loading='true']:text-transparent
                     tracking-tight
                 `}
                 >
                     {IconComponent && <IconComponent className="inline-flex mx-auto w-5 h-5" />}
-                    <span className="data-[loading=true]:hidden mx-2 mt-t font-martianmono">
+                    <span className="data-[loading=true]:hidden mx-2 mt-t font-josefinsans">
                         {buttonText}
                     </span>
                 </div>
@@ -137,9 +142,9 @@ export const ButtonStyle = ({
                     uppercase
                 `}
                 >
-                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin !relative !w-2 !h-2" />
-                    <ShapeCircle className="hidden !relative !w-3.5 !h-3.5 group-data-[loading=true]:!w-4 group-data-[loading=true]:!h-4" />
-                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin !relative !w-2 !h-2" />
+                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin relative! w-2! h-2!" />
+                    <ShapeCircle className="hidden relative! w-3.5! h-3.5! group-data-[loading=true]:w-4! group-data-[loading=true]:h-4!" />
+                    <Rec className="hidden group-data-[loading=true]:inline-block animate-spin relative! w-2! h-2!" />
                 </div>
             </div>
         </button>
