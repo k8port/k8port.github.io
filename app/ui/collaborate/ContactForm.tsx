@@ -66,7 +66,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-center gap-2 w-full">
                     <label htmlFor="firstname" className="whitespace-nowrap">
-                        <span className="font-dmserifdisplay inline-flex items-center after:content-[*] after:ml-1 after:text-collection-alizarincrimson">
+                        <span className="font-zillaslab inline-flex items-center after:content-[*] after:ml-1 after:text-collection-alizarincrimson">
                             first&nbsp;name&nbsp;
                         </span>
                         <input
@@ -81,7 +81,7 @@ export default function ContactForm() {
 
                 <div className="flex items-center gap-2 w-full">
                     <label htmlFor="lastname" className="whitespace-nowrap">
-                        <span className="font-dmserifdisplay font-medium inline-flex items-center after:content-[*] after:ml-1 after:text-collection-alizarincrimson">
+                        <span className="font-zillaslab font-medium inline-flex items-center after:content-[*] after:ml-1 after:text-collection-alizarincrimson">
                             last&nbsp;name&nbsp;
                         </span>
                         <input
@@ -98,7 +98,7 @@ export default function ContactForm() {
             {/* preferred communication - temporarily disabled for email-only */}
             {/*
             <fieldset className="space-y-2">
-                <legend className="font-dmserifdisplay font-medium">
+                    <legend className="font-zillaslab font-medium">
                     preferred communication&nbsp;
                     <span className="text-collection-alizarincrimson">*</span>
                 </legend>
@@ -111,7 +111,7 @@ export default function ContactForm() {
             {/* Contact Channels */}
             <div className="grid md:grid-cols-3 gap-4">
                 <label className="flex flex-col">
-                    <span className="font-dmserifdisplay font-medium">
+                    <span className="font-zillaslab font-medium">
                         email <span className="text-collection-alizarincrimson">*</span>
                     </span>
                     <input
@@ -125,7 +125,7 @@ export default function ContactForm() {
 
                 {/*
                 <label className="flex flex-col">
-                    <span className="font-dmserifdisplay font-medium">
+                    <span className="font-zillaslab font-medium">
                         phone
                     </span>
                     <input
@@ -137,7 +137,7 @@ export default function ContactForm() {
                 </label>
 
                 <label className="flex flex-col">
-                    <span className="font-dmserifdisplay font-medium">
+                    <span className="font-zillaslab font-medium">
                         whatsapp
                     </span>
                     <input
@@ -152,7 +152,7 @@ export default function ContactForm() {
 
             {/* Message Area */}
             <label className="flex flex-col">
-                <span className="text-sm font-medium">Message</span>
+                <span className="font-zillaslab text-sm font-medium">Message</span>
                 <textarea
                     name="message"
                     rows={6}

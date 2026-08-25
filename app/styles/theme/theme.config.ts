@@ -5,24 +5,30 @@ import { neutral_browns } from '../colors/neutrals/browns';
 import { spectrum_blues } from '../colors/spectrum/blues';
 import { theme } from './theme_light';
 import { darkThemeColors } from './theme_dark';
+import { proficiencies } from '../colors/proficiencies';
+import { collection } from '../colors/collection';
 import { typography } from '../typography/typography';
 import { lightThemeButtonShadows, darkThemeButtonShadows } from './shadows';
 
 export const themeConfig = {
     colors: {
         ...theme.colors,
-        ...darkThemeColors,
+        ...darkThemeColors.colors.brand,
+        ...darkThemeColors.colors.accent,
         ...neutral_blacks,
         ...neutral_grays,
         ...neutral_browns,
         ...neutral_whites,
         ...spectrum_blues,
+        ...proficiencies,
+        ...collection
     },
     typography: {
         ...typography.font,
     },
     shadows: {
         ...theme.shadows,
+        ...darkThemeColors.shadows,
         ...lightThemeButtonShadows,
         ...darkThemeButtonShadows,
     },

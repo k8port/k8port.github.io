@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 import { AnimatedMuseGroup } from './vector/AnimatedMuseGroup';
 
 interface LayeredVectorProps {
@@ -50,15 +51,10 @@ export default function LayeredVector({ className }: LayeredVectorProps) {
                     width={width}
                     height={height}
                     style={{ aspectRatio }}
-                    className={`
-                        absolute right-0
-                        object-cover
-                        opacity-85
-                        priority
-                        h-dvh
-                        sm:h-full
-                        min-w-[285px]
-                    `}
+                    className={clsx(
+                        'absolute right-0 object-cover opacity-85 priority h-dvh sm:h-full min-w-[285px] transition-all duration-300',
+                        'dark:[filter:invert(1)_hue-rotate(180deg)_brightness(1.05)_contrast(1.15)]'
+                    )}
                 />
             </div>
         </div>

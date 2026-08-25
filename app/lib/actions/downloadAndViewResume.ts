@@ -1,7 +1,7 @@
 'use client';
 
 const viewResume = () => {
-    window.open('https://drive.proton.me/urls/35YHM5DT3W#q8cG6y5bmbYP', '_blank');
+    window.open('https://drive.proton.me/urls/1ASPCV1G40#a7Uyv8z5uptW', '_blank');
 };
 
 export const downloadAndViewResume = () => {
@@ -10,8 +10,8 @@ export const downloadAndViewResume = () => {
     );
     if (shouldDownload) {
         const a = document.createElement('a');
-        a.href = '/resume_k8portalatin.pdf';
-        a.download = 'resume_k8portalatin.pdf';
+        a.href = '/Kportalatin_resume_0826.pdf';
+        a.download = 'Kportalatin_resume_0826.pdf';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

@@ -1,3 +1,4 @@
+'use client';
 // src/components/AnimatedMuseSVG.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -76,7 +77,7 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                             times: [0, 0.3, 1],
                         };
                     } else {
-                        animate = swirlTo;
+                        animate = { ...swirlTo, opacity: [1] };
                         transition = {
                             duration: rand(8, 16),
                             ease: 'easeInOut',
@@ -90,7 +91,7 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                         <motion.g
                             key={id}
                             id={id}
-                            initial={{ x: 0, y: 0, rotate: 0 }}
+                            initial={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
                             animate={animate}
                             transition={transition}
                         >
