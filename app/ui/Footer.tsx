@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { FC, ReactNode, HTMLAttributes } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -16,8 +17,6 @@ export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
 const defaultNav: NavItem[] = [
     { href: '/#landing', label: 'About (top) | ↑' },
     { href: '/#projects', label: 'Projects ♤' },
-    // { href: '/blog', label: 'Blog ♡' },
-    // { href: '/skills', label: 'Skills & Experience ♧' },
     { href: '/#contact', label: ' ↓ | Contact (bottom)' },
 ];
 
@@ -56,15 +55,15 @@ const Footer: FC<FooterProps> = ({
             </nav>
 
             {/* Center copyright */}
-            <div className="inline-flex space-x-6 text-xl text-center order-last md:order-none">
+            <div className="inline-flex space-x-6 text-xl text-center order-last md:order-0">
                 <p className="font-mono">@{new Date().getFullYear()}</p>
                 <p className="text-4xl font-lobster">k8port io</p>
-                <p className="font-dmserifdisplay">All rights reserved.</p>
+                <p className="font-zillaslab">All rights reserved.</p>
             </div>
 
             {/* Right social links */}
             <div className="hidden md:flex justify-center gap-4">
-                {socials.map(({ href, label, icon }) => (
+                {socials.map(({ href, icon }) => (
                     <Link
                         key={href}
                         href={href}

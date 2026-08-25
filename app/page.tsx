@@ -16,8 +16,8 @@ export default function HomePage() {
             </section>
 
             <section id="contact" className="relative flex flex-col min-h-screen">
-                <CollaborateContainer className="flex-grow" />
-                <Footer className="mt-auto"/>
+                <CollaborateContainer className="grow" />
+                <Footer className="mt-auto" />
             </section>
         </div>
     );

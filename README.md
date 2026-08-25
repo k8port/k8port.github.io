@@ -1,36 +1,101 @@
 # k8port.github.io
 
-[Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Personal portfolio site built with Next.js App Router, TypeScript, Tailwind CSS, and static export deployment.
 
-## Getting Started
+## Stack
 
-First, run the development server:
+- Next.js 15 (App Router)
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- ESLint 9 + Prettier
+- Jest + Testing Library
+- pnpm
+
+## Prerequisites
+
+- Node.js >= 22 and < 26
+- Corepack enabled (recommended)
+
+## Local setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+corepack enable
+corepack prepare pnpm@10.10.0 --activate
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+```
 
-## Learn More
+App runs at http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `pnpm dev`: start local dev server
+- `pnpm lint`: run ESLint
+- `pnpm lint:fix`: auto-fix lint issues when possible
+- `pnpm test`: run Jest tests
+- `pnpm test:ci`: run Jest in CI mode (`--ci --runInBand`)
+- `pnpm test:coverage`: run tests with coverage output
+- `pnpm build`: production build (static export enabled)
+- `pnpm start`: serve production build output
+- `pnpm format`: run Prettier for app/styles files
 
-Check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment model
 
-## Deploy on Vercel
+Deployment target is GitHub Pages via GitHub Actions workflow in [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml).
 
-The easiest way to deploy Next.js is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Key behavior:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `next.config.ts` sets `output: 'export'` and `images.unoptimized: true`
+- `pnpm build` produces static export artifacts in `out/`
+- Workflow uploads `out/` on pushes to `main`
+
+## Testing and quality gates
+
+Pull requests to `main` run the workflow job that executes:
+
+1. `pnpm install`
+2. `pnpm build`
+3. `pnpm test:ci`
+
+Keep local checks aligned with CI:
+
+```bash
+pnpm lint
+pnpm test:ci
+pnpm build
+```
+
+## Contributor workflow
+
+1. Create a branch from `main`
+2. Implement a scoped change
+3. Run local checks: lint, tests, build
+4. Push branch and open PR into `main`
+5. Merge after CI is green
+
+Example:
+
+```bash
+git checkout main
+git pull --ff-only origin main
+git checkout -b feat/your-change
+
+pnpm lint
+pnpm test:ci
+pnpm build
+
+git add -A
+git commit -m "feat: your change summary"
+git push -u origin feat/your-change
+```
+
+## Notes
+
+- The legacy API contact route is intentionally deprecated; current contact flow uses mailto transport.
+- Jest config is ESM-based in [jest.config.mjs](jest.config.mjs).

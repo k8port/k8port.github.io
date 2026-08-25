@@ -1,0 +1,122 @@
+= Daily Operating Checklist
+Kiki Portalatin <k8@k8port.io>
+version: 2026-05-03
+
+Use this as a fast daily companion to github-project-copilot-workflow.adoc.
+
+== 1) Start of Day (10 minutes)
+
+[ ] Pick 1 primary issue and 1 backup issue.
+[ ] Confirm dependency order and unblock status.
+[ ] Choose collaboration mode:
+- Autonomous Executor
+- Manager + Delegate
+- Pairing Loop
+- Reviewer First
+- Coach Mode
+[ ] Confirm definition of done for today.
+
+Daily kickoff note template:
+
+----
+Issue: #
+Mode:
+Today goal:
+Success criteria:
+Known risks:
+----
+
+== 2) Build Block (60-120 minutes)
+
+[ ] Keep scope limited to one issue.
+[ ] Keep PR size small (target < 200 LOC when practical).
+[ ] Update issue progress at midpoint.
+[ ] If blocked > 30 minutes, escalate with options.
+
+Midpoint update template:
+
+----
+Status: on track / at risk / blocked
+Changed:
+Verified:
+Remaining:
+Need decision on:
+----
+
+== 3) Verification Gate (before PR)
+
+[ ] Lint passed.
+[ ] Tests passed (or not applicable explained).
+[ ] Build passed for deployment target.
+[ ] Acceptance criteria fully addressed.
+[ ] No sensitive logs or debug leakage.
+
+Verification command template:
+
+----
+pnpm lint
+pnpm test
+pnpm build
+----
+
+== 4) PR Readiness
+
+[ ] PR links issue with closes #<issue-number>.
+[ ] PR summary includes what changed, why, and risk notes.
+[ ] Evidence included (output summary and/or screenshots).
+[ ] Rollback plan included for non-trivial changes.
+
+PR summary mini-template:
+
+----
+What changed:
+Why:
+Validation:
+Risk:
+Rollback:
+----
+
+== 5) Blocker Escalation
+
+If blocked < 30 minutes:
+[ ] Assistant proposes 2 options + tradeoffs.
+
+If blocked 30-120 minutes:
+[ ] Pause coding and request human decision.
+[ ] Confirm revised scope.
+
+If blocked > 120 minutes:
+[ ] Split issue.
+[ ] Land safe partial progress.
+[ ] Open follow-up issue with blocker details.
+
+== 6) End of Day (10 minutes)
+
+[ ] Post issue update with progress and next step.
+[ ] Move item to correct board state.
+[ ] Capture one improvement for tomorrow.
+
+End-of-day update template:
+
+----
+Issue: #
+Today completed:
+Verification done:
+Open risks:
+Next action:
+State change: Ready/In Progress/In Review/Done/Blocked
+----
+
+== 7) Weekly Friday Closeout
+
+[ ] Ensure Done items include evidence.
+[ ] Close or relabel stale items.
+[ ] Confirm next week top 3 priorities.
+
+Weekly retro template:
+
+----
+Keep:
+Change:
+Stop:
+----

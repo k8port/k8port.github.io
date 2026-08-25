@@ -2,8 +2,11 @@ import React, { forwardRef } from 'react';
 import LayeredVector from './LayeredVector';
 import AboutMe from './profile/AboutMe';
 import { MobileButtonGroup } from '../buttons/MobileButtonGroup';
-import { DesktopButtonGroup } from '../buttons/DesktopButtonGroup';
 import { III } from './profile/III';
+import { Greeting } from './profile/Greeting';
+import { Display } from '../typography/Display';
+import { Headline } from '../typography/Headline';
+import { ProfilePic } from './profile/ProfilePic';
 import { useBreakpointDebug } from '../../lib/hooks/useBreakpointDebug';
 import { useWindowSize } from '../../lib/hooks/useWindowSize';
 
@@ -14,105 +17,95 @@ interface LandingContentProps {
 const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ className }, ref) => {
     useBreakpointDebug();
     useWindowSize();
-    
 
     return (
         <div
-          ref={ref}
-          className={`
-            flex w-full
-            gap-0 mx-auto
-            justify-center
+            ref={ref}
+            className={`
+            relative flex flex-col w-full
+            gap-10 mx-auto
             pb-20
             shadow
             ${className}
           `}
         >
-        <div
-          className={`
-            flex flex-col
-            gap-6 md:gap-4
-            mt-0 sm:mt-2 mlg:mt-16
-            ml-0 sm:ml-16 md:ml-32 mlg:ml-64
-          `}
-        >
-          <III
-              className={`
-                mt-10 relative
-                md:hidden
-                flex flex-col
-                gap-2
-              `}
-              insertNameHere="Kate Portalatin"
-              insertJobTitleHere="Senior Software Engineer"
-              profilePicWidth="w-96 lg:w-md"
-          />
-          <MobileButtonGroup className="self-center md:hidden" />
+            {/* Mobile hero */}
+            <div className="flex flex-col gap-6 mt-10 md:hidden">
+                <Greeting
+                    className="greeting text-5xl text-accent font-outline ml-26"
+                    greetingText="Hello!"
+                />
+                <III
+                    className="relative flex flex-col gap-2"
+                    insertNameHere="Kate Portalatin"
+                    insertJobTitleHere="Full Stack Product Engineer 🜉 Data Intensive Frontends"
+                    profilePicWidth="w-96 lg:w-md"
+                />
+                <MobileButtonGroup className="self-center" />
+            </div>
 
-          <AboutMe className="flex flex-col gap-6 mx-auto px-10 items-center md:mt-50" />
+            {/* Desktop hero: PhotoOrb in the top-left corner with the greeting,
+                name, and title overlapping it. */}
+            <section className="relative hidden w-full min-h-vh md:block">
+                <div
+                    className={`
+                        absolute top-0 left-0 z-0
+                        w-[65vw] max-w-2xl
+                    `}
+                >
+                    <ProfilePic
+                        imageWidth={2038}
+                        imageHeight={1840}
+                        className="rounded-full shadow-btn-shadow aspect-1038/920"
+                        profilePicSrc="/images/abstract-profile/abstract-profile-sunset.svg"
+                        profilePicDescription="Profile Picture"
+                        restingOpacity={0.65}
+                    />
+                </div>
 
-          <DesktopButtonGroup className="hidden md:inline-flex items-start" />
-      </div>
+                <div className="relative z-10 flex w-full flex-col pt-8 pl-10 mlg:pl-20">
+                    <Greeting
+                        className={`
+                            greeting
+                            text-4xl md:text-6xl lg:text-7xl
+                            text-center
+                            text-border-strong
+                            font-outline
+                        `}
+                        greetingText="Hello!"
+                    />
 
-      <LayeredVector 
-        className={`
+                    <div className="mt-6 flex flex-col items-center text-center">
+                        <Display
+                            className="h-auto text-center animate-slide-in-left font-semibold"
+                            displayText="Kate Portalatin"
+                            textColor="text-persiangreen"
+                            textSize="text-5xl"
+                        />
+                        <Headline
+                            className="mt-4 h-auto text-center animate-slide-in-left"
+                            headlineText="Full Stack Product Engineer | Data Intensive Frontends | Systems & Discovery"
+                            headlineStyle="default"
+                            textColor="text-primary"
+                            textSize="text-lg"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* Text container: ~50% of the page, center-aligned */}
+            <AboutMe className="flex w-full flex-col gap-6 mx-auto md:w-4/5" />
+
+            <LayeredVector
+                className={`
           absolute top-0 right-0
           h-dvh z-999
-        `} />
-
-      <div className={`
-              flex flex-col
-              w-full h-full
-              mx-auto
-            `}>
-              <div className="hidden md:flex md:flex-col justify-normal space-y-6">
-                  <div className="relative">
-                      <III
-                          className={`
-                            absolute
-                            top-15
-                            left-10
-                            lg:left-15
-                            xl:left-50
-                            -translate-x-1/2
-                            w-full
-                            max-w-md
-                            text-center
-                            overflow-hidden
-                            items-center
-                          `}
-                          insertNameHere="Kate Portalatin"
-                          insertJobTitleHere="Senior Software Engineer"
-                          profilePicWidth="w-lg max-w-2xl"
-                      />
-                  </div>
-              </div>
-            </div>
+        `}
+            />
         </div>
     );
 });
 
 LandingContent.displayName = 'LandingContent';
-
-                {/* <div className="flex flex-col items-center justify-center">
-                  <iframe 
-                    style={{borderRadius: "12px"}}
-                    title="Music Speaks"
-                    src="https://open.spotify.com/embed/playlist/7uPHECxzk2dVTzRUKXB8uA?utm_source=generator&theme=0" 
-                    width="100%"
-                    height="352"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"/>
-                </div> TODO: move to other section */} 
-
-                {/* TODO: move to other section */}
-                {/* <div className='flex flex-col items-center justify-center'>
-            <div className='flex flex-row gap-4'>
-              <CreativeType 
-                src='/images/The_Alchemist_GIF.gif' 
-                className='w-xs h-auto mix-blend-hard-light opacity-60 hover:opacity-70'
-              />
-            </div>
-          </div> */}
-
 
 export default LandingContent;

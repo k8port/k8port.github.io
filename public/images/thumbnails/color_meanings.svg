@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 220" fill="none">
+  <rect width="348" height="220" rx="8" fill="#1a1a2e"/>
+  <circle cx="134" cy="95" r="28" fill="#e94560" opacity="0.8"/>
+  <circle cx="174" cy="95" r="28" fill="#f5a623" opacity="0.7"/>
+  <circle cx="214" cy="95" r="28" fill="#4a90d9" opacity="0.7"/>
+  <circle cx="154" cy="95" r="28" fill="#8b5cf6" opacity="0.3"/>
+  <circle cx="194" cy="95" r="28" fill="#10b981" opacity="0.3"/>
+  <text x="174" y="155" text-anchor="middle" fill="#f5a623" font-family="monospace" font-size="14" opacity="0.8">Color Meanings API</text>
+</svg>

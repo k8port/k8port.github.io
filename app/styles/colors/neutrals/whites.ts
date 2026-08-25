@@ -65,8 +65,8 @@ export const neutral_whites = {
         whitesand: 'oklch(0.94 0.0074 80.72)',
         whitewhisper: 'oklch(0.93 0.0096 93.57)',
     },
-    bluewhites: { /* Blue Whites */
-        aircraftwhite: 'oklch(0.96 0.0097 252.81)',
+    bluewhites: {
+        /* Blue Whites */ aircraftwhite: 'oklch(0.96 0.0097 252.81)',
         aliceblue: 'oklch(0.98 0.0127 244.25)',
         antiflashwhite: 'oklch(0.96 0.0017 247.84)',
         audienceanger: 'oklch(0.96 0.0151 241.77)',

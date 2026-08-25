@@ -1,55 +1,146 @@
 [
     {
+        "key": "stitch-companion",
+        "slug": "stitch-companion",
         "title": "Stitch Companion",
-        "description":
-            "Web app for creating and sharing cross-stitch and embroidery patterns from images",
-        "link": "https://github.com/k8port/stitch_companion",
-        "tags": ["Python", "React", "Flask", "Docker"]
+        "description": "Web app for creating and sharing cross-stitch and embroidery patterns from images",
+        "github": "https://github.com/k8port/stitch_companion",
+        "portfolioRoute": "/projects/stitch-companion",
+        "externalLiveUrl": "",
+        "deploymentModel": "external-cloud",
+        "liveStatus": "in-progress",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Python", "React", "Flask", "Docker"],
+        "image": "/images/thumbnails/stitch_companion.svg"
     },
     {
+        "key": "pattern-generator",
+        "slug": "pattern-generator",
         "title": "Pattern Generator",
-        "description":
-            "Algorithmically-generated patterns with color theme customization built with plain JS",
-        "link": "https://github.com/k8port/pattern_generator",
-        "tags": ["Plain JS", "Procedural Art"]
+        "description": "Algorithmically-generated patterns with color theme customization built with plain JS",
+        "github": "https://github.com/k8port/pattern_generator",
+        "portfolioRoute": "/projects/pattern-generator",
+        "externalLiveUrl": "https://k8port.github.io/pattern_gen/",
+        "deploymentModel": "internal-static",
+        "liveStatus": "live",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Plain JS", "Procedural Art"],
+        "image": "/images/pattern_generator_thumb.png"
     },
     {
+        "key": "family-device-agent",
+        "slug": "family-device-agent",
         "title": "Family Device Agent",
-        "description":
-            "SaaS platform built to manage family devices, including smart home and personal, with a focus on security and privacy. (prototype in TypeScript)",
-        "link": "https://github.com/k8port/device-management-system",
-        "tags": ["Java", "Spring", "AWS", "Docker", "Terraform"]
+        "description": "SaaS platform built to manage family devices, including smart home and personal, with a focus on security and privacy. (prototype in TypeScript)",
+        "github": "https://github.com/k8port/device-management-system",
+        "portfolioRoute": "/projects/family-device-agent",
+        "externalLiveUrl": "",
+        "deploymentModel": "external-cloud",
+        "liveStatus": "planned",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Java", "Spring", "AWS", "Docker", "Terraform"],
+        "image": "/images/thumbnails/device_agent.svg"
     },
     {
+        "key": "color-meanings",
+        "slug": "color-meanings",
         "title": "Color Meanings API",
-        "description":
-            "Data pipeline and GraphQL API for Jacob Oleson's Color Meanings web site with additional research and analysis",
-        "link": "https://github.com/k8port/color_meanings_api",
-        "tags": ["Python", "Flask", "GraphQL"]
+        "description": "Data pipeline and GraphQL API for Jacob Oleson's Color Meanings web site with additional research and analysis",
+        "github": "https://github.com/k8port/color-meanings",
+        "portfolioRoute": "/projects/color-meanings",
+        "externalLiveUrl": "",
+        "deploymentModel": "external-cloud",
+        "liveStatus": "planned",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Python", "Flask", "GraphQL"],
+        "image": "/images/thumbnails/color_meanings.svg"
     },
     {
+        "key": "k8port-portfolio",
+        "slug": "k8port-portfolio",
         "title": "k8port.github.io",
-        "description":
-            "Personal website built with Next.js 15, TailwindCSS 4, and React 19 with TypeScript",
-        "link": "https://github.com/k8port/k8port.github.io",
-        "tags": ["Next.js", "TailwindCSS", "React", "TypeScript"]
+        "description": "Personal website built with Next.js 15, TailwindCSS 4, and React 19 with TypeScript",
+        "github": "https://github.com/k8port/k8port.github.io",
+        "portfolioRoute": "/projects/k8port-portfolio",
+        "externalLiveUrl": "https://k8portalatin.dev",
+        "deploymentModel": "hybrid",
+        "liveStatus": "in-progress",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Next.js", "TailwindCSS", "React", "TypeScript"],
+        "image": "/images/thumbnails/portfolio.svg"
     },
     {
+        "key": "music-recommendations",
+        "slug": "music-recommendations",
         "title": "Music Recommendations",
         "description": "Music recommendations app built with React and TypeScript",
-        "link": "https://github.com/k8port/sonos_music_recommendations",
-        "tags": ["REST API", "ML Models", "AWS", "Sonos integration", "Terraform"]
+        "github": "https://github.com/k8port/sonos_music_recommendations",
+        "portfolioRoute": "/projects/music-recommendations",
+        "externalLiveUrl": "",
+        "deploymentModel": "external-cloud",
+        "liveStatus": "planned",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["REST API", "ML Models", "AWS", "Sonos integration", "Terraform"],
+        "image": "/images/thumbnails/music_recs.svg"
     },
     {
+        "key": "sobres",
+        "slug": "sobres",
         "title": "Sobres",
         "description": "Python backend, Next.js frontend budgeting app modelled after \"envelopes\" system",
-        "link": "https://github.com/k8port/sobres",
-        "tags": ["Python", "Next.js", "AWS", "Docker", "SQL"]
+        "github": "https://github.com/k8port/sobres",
+        "portfolioRoute": "/projects/sobres",
+        "externalLiveUrl": "",
+        "deploymentModel": "external-cloud",
+        "liveStatus": "planned",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["Python", "Next.js", "AWS", "Docker", "SQL"],
+        "image": "/images/thumbnails/sobres.svg"
     },
     {
-        "title": "Sudoku POW",
-        "description": "Sudoku solver and generator built as PWA using React and TypeScript",
-        "link": "https://github.com/k8port/sudoku_pow",
-        "tags": ["React", "TypeScript", "PWA"]
+        "key": "sudoku-pow",
+        "slug": "sudoku-pow",
+        "title": "Sudoku App",
+        "description": "Sudoku solver and generator built as a PWA with customizable UI and sound",
+        "github": "https://github.com/k8port/sudoku-pow",
+        "portfolioRoute": "/projects/sudoku-pow",
+        "externalLiveUrl": "https://k8port.github.io/sudoku-app/",
+        "deploymentModel": "external-static",
+        "liveStatus": "live",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["React", "TypeScript", "PWA"],
+        "image": "/images/thumbnails/sudoku_pow.svg"
+    },
+    {
+        "key": "tarot-reader",
+        "slug": "tarot-reader",
+        "title": "Tarot Reader",
+        "description": "LLM-powered tarot reading project with staged MVP from portfolio route to hosted app",
+        "github": "https://github.com/k8port/tarot-llm",
+        "portfolioRoute": "/projects/tarot-reader",
+        "externalLiveUrl": "",
+        "deploymentModel": "hybrid",
+        "liveStatus": "live",
+        "ctaPrimaryLabel": "View Project",
+        "ctaSecondaryLabel": "Live App",
+        "visibility": "public",
+        "tags": ["LLM", "RAG", "Prompt Engineering", "Python"],
+        "image": "/images/tarot/thefool_01.jpg"
     }
 ]

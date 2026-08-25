@@ -8,6 +8,7 @@ interface ImageFrameProps {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
+    unoptimized?: boolean;
 }
 
 export const ImageFrame = ({
@@ -17,6 +18,7 @@ export const ImageFrame = ({
     imageAlt,
     imageWidth,
     imageHeight,
+    unoptimized,
 }: ImageFrameProps) => {
     return (
         <div className={`flex items-center relative ${className}`}>
@@ -28,6 +30,7 @@ export const ImageFrame = ({
                 height={imageHeight}
                 priority
                 quality={90}
+                unoptimized={unoptimized}
             />
         </div>
     );

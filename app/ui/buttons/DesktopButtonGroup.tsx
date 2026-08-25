@@ -22,22 +22,22 @@ export const DesktopButtonGroup = ({ className }: DesktopButtonGroupProps) => {
     };
 
     return (
-        <div className={`flex justify-center space-x-4 ${className}`}>
+        <div className={`flex flex-col items-stretch justify-center space-y-4 ${className}`}>
             <ButtonStyle
-                style="filled"
-                iconPosition="left-icon"
-                size="tiny"
-                borderRadius="sixteen"
+                style="ghost"
+                iconPosition="left-icon-right-text"
+                size="large"
+                borderRadius="thirty-two"
                 buttonText="Resume / CV"
                 buttonIconSelection={DownloadIcon ?? undefined}
                 onClick={handleResumeClick}
             />
             <ButtonStyle
-                style='filled'
-                iconPosition='left-icon'
-                size='tiny'
-                borderRadius='sixteen'
-                buttonText='Contact Me'
+                style="ghost"
+                iconPosition="left-icon-right-text"
+                size="large"
+                borderRadius="thirty-two"
+                buttonText="Contact Me"
                 buttonIconSelection={PhoneIcon ?? undefined}
                 onClick={handleContactClick}
             />

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 220" fill="none">
+  <rect width="348" height="220" rx="8" fill="#1a1a2e"/>
+  <rect x="124" y="40" width="100" height="100" rx="4" stroke="#e94560" stroke-width="2" fill="#16213e"/>
+  <line x1="157" y1="40" x2="157" y2="140" stroke="#e94560" stroke-width="0.8" opacity="0.4"/>
+  <line x1="191" y1="40" x2="191" y2="140" stroke="#e94560" stroke-width="0.8" opacity="0.4"/>
+  <line x1="124" y1="73" x2="224" y2="73" stroke="#e94560" stroke-width="0.8" opacity="0.4"/>
+  <line x1="124" y1="107" x2="224" y2="107" stroke="#e94560" stroke-width="0.8" opacity="0.4"/>
+  <text x="140" y="64" fill="#64ffda" font-family="monospace" font-size="16">5</text>
+  <text x="174" y="64" fill="#8892b0" font-family="monospace" font-size="16">3</text>
+  <text x="206" y="64" fill="#64ffda" font-family="monospace" font-size="16">7</text>
+  <text x="140" y="97" fill="#8892b0" font-family="monospace" font-size="16">6</text>
+  <text x="174" y="97" fill="#64ffda" font-family="monospace" font-size="16">9</text>
+  <text x="206" y="97" fill="#8892b0" font-family="monospace" font-size="16">1</text>
+  <text x="140" y="131" fill="#64ffda" font-family="monospace" font-size="16">8</text>
+  <text x="174" y="131" fill="#8892b0" font-family="monospace" font-size="16">4</text>
+  <text x="206" y="131" fill="#64ffda" font-family="monospace" font-size="16">2</text>
+  <text x="174" y="170" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="14" opacity="0.8">Sudoku POW</text>
+</svg>

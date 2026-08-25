@@ -1,5 +1,3 @@
-import React from 'react';
-
 export enum MixBlendMode {
     MULTIPLY = 'multiply',
     SCREEN = 'screen',
@@ -14,19 +12,19 @@ export enum MixBlendMode {
     EXCLUSION = 'exclusion',
     HUE = 'hue',
     SATURATION = 'saturation',
-    COLOR = 'color', 
+    COLOR = 'color',
     LUMINOSITY = 'luminosity',
     PLUS_DARKER = 'plus-darker',
-    PLUS_LIGHTER = 'plus-lighter'
+    PLUS_LIGHTER = 'plus-lighter',
 }
 
 const isValidBlendMode = (mode: string) => {
     return Object.values(MixBlendMode).includes(mode as MixBlendMode);
-}
+};
 
 export const getBlendMode = (mode: string) => {
     if (isValidBlendMode(mode)) {
         return `mix-blend-${mode}`;
     }
     return 'mix-blend-normal';
-}
+};

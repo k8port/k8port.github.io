@@ -1,0 +1,223 @@
+.
+├── __mocks__
+│   ├── empty.js
+│   ├── fileMock.js
+│   ├── nextFontMock.js
+│   └── styleMock.js
+├── app
+│   ├── __tests__
+│   │   └── page.test.tsx
+│   ├── api
+│   │   └── contact
+│   │       └── route.ts
+│   ├── archive
+│   │   ├── competencies.md
+│   │   ├── designpatterns_2025.md
+│   │   ├── designpatterns_fullstack.md
+│   │   ├── fullstack_swe.json
+│   │   ├── generateIcons.tsx
+│   │   ├── IconContainer.tsx
+│   │   ├── IconRow.tsx
+│   │   ├── java_ecosystem.json
+│   │   ├── LayeredVectorVector.tsx
+│   │   ├── proficiencies.adoc
+│   │   ├── ProfileDescription.tsx
+│   │   ├── ProfileDescriptionGroup.tsx
+│   │   ├── python_ecosystem.json
+│   │   ├── skills.json
+│   │   └── svgtopng.sh
+│   ├── blog
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── data
+│   │   ├── blob_data.ts
+│   │   ├── EUROPEAN_MUSES.ts
+│   │   ├── HAIR_STRANDS.ts
+│   │   ├── MUSES.ts
+│   │   └── projects.json
+│   ├── layout.tsx
+│   ├── lib
+│   │   ├── actions
+│   │   │   ├── blendMode.ts
+│   │   │   ├── contact.ts
+│   │   │   ├── downloadAndViewResume.ts
+│   │   │   └── getFontAwesomeIcon.ts
+│   │   ├── email
+│   │   │   └── index.ts
+│   │   ├── hooks
+│   │   │   ├── useBreakpointDebug.ts
+│   │   │   ├── useScrollFade.ts
+│   │   │   └── useWindowSize.ts
+│   │   ├── posts.ts
+│   │   └── types.ts
+│   ├── page.tsx
+│   ├── styles
+│   │   ├── colors
+│   │   │   ├── neutrals
+│   │   │   │   ├── blacks.ts
+│   │   │   │   ├── browns.ts
+│   │   │   │   ├── grays.ts
+│   │   │   │   └── whites.ts
+│   │   │   └── spectrum
+│   │   │       ├── blues.ts
+│   │   │       ├── greens.ts
+│   │   │       ├── oranges.ts
+│   │   │       ├── purples.ts
+│   │   │       ├── reds.ts
+│   │   │       └── yellows.ts
+│   │   ├── globals.css
+│   │   ├── theme
+│   │   │   ├── shadows.ts
+│   │   │   ├── theme_dark.ts
+│   │   │   ├── theme_light.ts
+│   │   │   └── theme.config.ts
+│   │   └── typography
+│   │       ├── fonts.ts
+│   │       ├── typography.adoc
+│   │       └── typography.ts
+│   └── ui
+│       ├── background
+│       │   ├── Animate.tsx
+│       │   ├── InnerLayout.tsx
+│       │   ├── OpacityOverlay.tsx
+│       │   ├── RainboxGradientOverlay.tsx
+│       │   └── ScrollingBanner.tsx
+│       ├── buttons
+│       │   ├── button_styles.adoc
+│       │   ├── ButtonStyle.tsx
+│       │   ├── DesktopButtonGroup.tsx
+│       │   ├── Floating.tsx
+│       │   ├── MobileButtonGroup.tsx
+│       │   ├── Popover.tsx
+│       │   └── Tooltip.tsx
+│       ├── collaborate
+│       │   ├── CollaborateContainer.tsx
+│       │   ├── ContactForm_v1.tsx
+│       │   ├── ContactForm.tsx
+│       │   └── EmailTemplate.tsx
+│       ├── Footer.tsx
+│       ├── header
+│       │   ├── Brand.tsx
+│       │   ├── Header.tsx
+│       │   └── navmenu
+│       │       └── NavMenu.tsx
+│       ├── icons
+│       │   ├── Rec.tsx
+│       │   └── ShapeCircle.tsx
+│       ├── ImageFrame.tsx
+│       ├── landing
+│       │   ├── LandingContainer.tsx
+│       │   ├── LandingContent.tsx
+│       │   ├── LayeredVector.tsx
+│       │   ├── profile
+│       │   │   ├── AboutMe.tsx
+│       │   │   ├── AnimateProfile.tsx
+│       │   │   ├── Greeting.tsx
+│       │   │   ├── III.tsx
+│       │   │   ├── PhotoBlobs.tsx
+│       │   │   ├── PhotoOrb.tsx
+│       │   │   ├── ProfileEffect.tsx
+│       │   │   ├── ProfilePic.tsx
+│       │   │   └── SvgDefs.tsx
+│       │   └── vector
+│       │       ├── AnimatedMuse.tsx
+│       │       ├── AnimatedMuseGroup.tsx
+│       │       ├── VectorFigure.tsx
+│       │       ├── VectorFragments.tsx
+│       │       └── VectorFrame.tsx
+│       ├── projects
+│       │   ├── ContentBox
+│       │   │   ├── Content.tsx
+│       │   │   ├── ContentBox.tsx
+│       │   │   └── User
+│       │   │       ├── UserCard.tsx
+│       │   │       ├── UserDetails.tsx
+│       │   │       └── UserThumb.tsx
+│       │   ├── PlaceholderPicture.tsx
+│       │   ├── ProjectCard.tsx
+│       │   ├── ProjectsContainer.tsx
+│       │   └── TitleCategory.tsx
+│       └── typography
+│           ├── Display.tsx
+│           ├── Headline.tsx
+│           ├── Subheader.tsx
+│           └── Title.tsx
+├── blog
+│   ├── lightweight_finetuning_on_local_llm.md
+│   └── notes
+│       ├── 0000_notes.adoc
+│       └── article_draft.adoc
+├── cspell.json
+├── eslint.config.mjs
+├── jest.config.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.mjs
+├── project-tree.txt
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── abstract-profile
+│   │   │   ├── abstract_profile.png
+│   │   │   ├── abstract-profile-casca.png
+│   │   │   ├── abstract-profile-chlorophyll.png
+│   │   │   ├── abstract-profile-lime.png
+│   │   │   ├── abstract-profile-melon.png
+│   │   │   ├── abstract-profile-reflection.png
+│   │   │   ├── abstract-profile-sunrise.png
+│   │   │   ├── abstract-profile-sunrise.svg
+│   │   │   ├── abstract-profile-sunset.svg
+│   │   │   ├── abstract-profile-tint.svg
+│   │   │   ├── abstract-profile-turq.png
+│   │   │   ├── abstract-profile-twilight.png
+│   │   │   ├── abstract-screamin-dreamin.png
+│   │   │   ├── profile_bg.jpg
+│   │   │   ├── profile_pic_bg.jpg
+│   │   │   ├── sparrows_aflight.svg
+│   │   │   └── sparrows_atrest.svg
+│   │   ├── arcade-girl.jpg
+│   │   ├── arcade-girl.png
+│   │   ├── brand
+│   │   │   ├── brand.png
+│   │   │   ├── filled-circle.svg
+│   │   │   ├── K8.png
+│   │   │   ├── K8.svg
+│   │   │   ├── red_logo.svg
+│   │   │   ├── tree_chip.svg
+│   │   │   ├── tree.svg
+│   │   │   └── waves_pattern.png
+│   │   ├── layered_vector
+│   │   │   ├── frags.svg
+│   │   │   ├── hair.svg
+│   │   │   ├── vector_figure-hairless.svg
+│   │   │   ├── vector_figure.png
+│   │   │   └── vector_figure.svg
+│   │   ├── mountains_and_moon
+│   │   │   ├── mountains&moon_aero.png
+│   │   │   ├── mountains&moon_aerograd.png
+│   │   │   ├── mountains&moon_apples.png
+│   │   │   ├── mountains&moon_pariswhites.png
+│   │   │   ├── mountains&moon_turqgrad.png
+│   │   │   └── mountains&moon-nyana.png
+│   │   ├── nouveau-brain.png
+│   │   ├── nouveaubrain.png
+│   │   ├── pattern_generator_thumb.png
+│   │   ├── placeholder.png
+│   │   ├── shape-circle.svg
+│   │   ├── The_Alchemist_GIF.gif
+│   │   ├── The_Gardener_GIF.gif
+│   │   └── topkandp.png
+│   ├── site.webmanifest
+│   └── videos
+│       └── The_Gardener_Video.mp4
+├── README.md
+├── tailwind.config.ts
+├── testing-strategy.md
+├── toggle-editor-mode.sh
+├── tsconfig.json
+└── vim-multiline-cheatsheet.md
+
+43 directories, 178 files

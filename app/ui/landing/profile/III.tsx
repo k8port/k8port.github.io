@@ -11,7 +11,6 @@ interface IIIProps {
 }
 
 export const III = ({ className, insertNameHere, insertJobTitleHere }: IIIProps) => {
-
     return (
         <div className={`${className}`}>
             <Display
@@ -24,16 +23,17 @@ export const III = ({ className, insertNameHere, insertJobTitleHere }: IIIProps)
                 className="mt-4 w-md h-auto text-center animate-slide-in-left"
                 headlineText={insertJobTitleHere}
                 headlineStyle="default"
-                textColor="text-greengrays-chameleongray"
+                textColor="text-greengrays-camouflagegray"
                 textSize="text-lg"
             />
-            <div className={`mt-4 sm:mt-10 h-auto`}>
+            <div className={'mt-4 sm:mt-10 h-auto'}>
                 <ProfilePic
                     imageWidth={2038}
                     imageHeight={1840}
-                    className="rounded-full opacity-65 shadow-btn-shadow aspect-[1038/920]"
+                    className="rounded-full shadow-btn-shadow aspect-1038/920"
                     profilePicSrc="/images/abstract-profile/abstract-profile-sunset.svg"
                     profilePicDescription="Profile Picture"
+                    restingOpacity={0.65}
                 />
             </div>
         </div>

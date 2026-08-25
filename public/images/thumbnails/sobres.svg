@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 220" fill="none">
+  <rect width="348" height="220" rx="8" fill="#0a192f"/>
+  <rect x="114" y="55" width="50" height="70" rx="4" fill="#112240" stroke="#64ffda" stroke-width="1.5"/>
+  <rect x="122" y="65" width="34" height="4" rx="2" fill="#64ffda" opacity="0.6"/>
+  <rect x="122" y="75" width="34" height="20" rx="2" fill="#64ffda" opacity="0.15"/>
+  <rect x="184" y="55" width="50" height="70" rx="4" fill="#112240" stroke="#f5a623" stroke-width="1.5"/>
+  <rect x="192" y="65" width="34" height="4" rx="2" fill="#f5a623" opacity="0.6"/>
+  <rect x="192" y="75" width="34" height="20" rx="2" fill="#f5a623" opacity="0.15"/>
+  <rect x="149" y="70" width="50" height="70" rx="4" fill="#112240" stroke="#e94560" stroke-width="1.5"/>
+  <rect x="157" y="80" width="34" height="4" rx="2" fill="#e94560" opacity="0.6"/>
+  <rect x="157" y="90" width="34" height="20" rx="2" fill="#e94560" opacity="0.15"/>
+  <text x="174" y="165" text-anchor="middle" fill="#64ffda" font-family="monospace" font-size="14" opacity="0.8">Sobres</text>
+</svg>

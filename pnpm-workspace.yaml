@@ -1,0 +1,20 @@
+allowBuilds:
+  cypress: true
+  sharp: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@floating-ui/core@1.8.0'
+  - '@floating-ui/dom@1.8.0'
+  - '@floating-ui/react-dom@2.1.9'
+  - '@floating-ui/react@0.27.20'
+  - '@floating-ui/utils@0.2.12'
+  - postcss@8.5.17
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - '@vercel/speed-insights'
+  - '@vscode/ripgrep'
+  - 'bufferutil'
+  - 'cypress'
+  - 'sharp'
+  - 'unrs-resolver'
+  - 'utf-8-validate'

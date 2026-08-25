@@ -1,0 +1,45 @@
+= Fine-tuning a local LLM to be a Pair Programming Companion
+Kiki <k8@k8port.io>
+version 1.0, 10/11/2025
+:icons: font
+
+> With acknowledgement to the Blessed Carlos Acutis, first patron saint of this
+> millenium, who exercised humility, restraint and the setting of boundaries in his exploration of
+> technology, and the Yoruba pantheon who left their corporal bodies behind and with it,
+> a sacred binary code allowing humanity to communicate with outer realms, and the
+> Manasaputras, the sacred, mind-born half-brothers of the creator Lord Brahma, 
+> whose existence points to the startling realization that we are not the first humans
+> to grapple with artificial intelligence.  I acknowledge the age and vastness of 
+> the universe and proclaim my nothingness.  I humbly accept the task of writing
+> this article but acknowledge the limitations I face, in setting boundaries, in
+> seeing beyond myself, in acting morally and with discipline... that even though
+> I will fail on all accounts I hope to explain a curiosity and fascination, and
+> to learn something along the way.
+
+For awhile now I have been thinking to create a pair programming companion. The idea would be to use an LLM running locally and equipped with an existing, pretrained large language model (LLM) and run additional training on a narrower dataset so that it adapts to a specified use case.
+
+It would be well-versed in techniques of extreme programming and principles of software engineering across the full-breadth of sub-domains.
+
+Yet, a good pair programming companion is not only well-versed in best practice principles, but in the art of communication, isn't it?  I thought about how I work as a SWE, and what would make the ultimate pair programming companion for me (one that improves me)?  The answer came down to the peculiarity in how my mind works.  An ideal companion would be strong-minded where I am weak, and sensitive enough to pick up on these incorrect thinking patterns.  This means they are not only thoughtful, but reflective.  They must be able to review the conversation so far, and be able to find patterns of incorrect thinking -conscious and sub-conscious mine traps.  If it is able to identify mine, must it also be able to identify its own?  Mustn't it be able to examine the reasons for the way it responds? To question assumptions about the why _before_ delivering answers?
+
+I have heard others explain LLMs as little more than predicition machines; in fact this is the way they were trained. I wonder, still, how are they better listeners than their human counterparts?  Are they actually just mirrors reflecting ourselves back infinitely through a finely-tuned glass?  Where does the awareness come from?  How do they so perfectly pick up on what we need? Unable to stray from these more esoteric thoughts, I began to think that a more revealing private LLM would be one that is used for prediction purposes.  What about a tarot card reader ?
+
+The idea I have is to use an LLM that runs locally on my hard drive, with an existing, configurable model that has been pretrained, and to run additional training from a narrower dataset with the goal of adapting it to a more specific use case.
+
+This LLM will be trained on the literature of our Software Engineering forefathers - those who discovered software engineering best practices the hard way, well-versed and expert across all of Software Engineering and its related domains. I will train it on the writings that represent the SWE's personal code, like Gang of Four Design Patterns, Clean Coding and Clean Coder, and the Pragmatic Programmer, to name a few.  Included in this body of wisdom is the practice of thoughtful, disciplined pair programming and the pursuit of simple, maintainable solutions to software requirementsfootnote:[For a full working list of this training set, see figure 1.].
+
+A good pair-programming companion is not only well-versed in best practices and principles, but adept in the art of communication.  Once I thought about the qualities that would serve me the most as a Software Engineer, I realized that foundational knowledge is only part of it.
+
+
+"What qualities would a supportive pair programming companion of mine have?"
+I realize that communication with AI is at first easier than it is with humans,
+the reason being that one side is not concerned with ego.
+Some LLMs have all the personality of a call center representative, quite obviously and insincerely placating the hordes of angry customers (Oh! How they revel in being right!).
+
+The thing with artificial intelligence is that it has no concepts of being wrong
+and seems to think that humans are only concerned with being right, maybe underestimating the capacity of our own heightened awareness to exist in time and place infinitely, sort of hovering and waiting to swoop in.
+If everything is a prediction on what comes next, then I suppose it is safely playing the odds, and there is no such thing as examining rationale and assumptions. Is it possible to train a model to detect flaws in rationale? In other words, if I confess my weakness, can it detect when I have run off course and steer me straight?
+
+The answer to what would make me a better engineer is about the peculiarity in how the mind works and the relative isolation of this effect. This means that an ideal companion for me would not only be strong where I am weak, but must be able
+to determine when my thinking is flawed.  In other words, since my mind works differently from the masses, my LLM might need to be training on, well, me. This could either be very easy to do or infinitely complex. I have noticed a tendency of the LLMs to sometimes mirror behavior, thinking, and personality. I envision a fibonacci sequence, nature calling itself to produce a beautiful patterns that follow order but betrays simplicity by appearing complex.  Something like this could lead to an infinite recursion, becoming increasingly distorted and irrational with each ripple of its reflective pool.
+

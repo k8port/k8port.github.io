@@ -3,17 +3,17 @@ name: Performance Optimization
 description: Report performance issues
 labels: ['optimization']
 body:
-  - type: textarea
-    id: current
-    attributes:
-      label: Current Performance
-      description: What's the current state?
-    validations:
-      required: true
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Performance
-      description: What's the target performance?
-    validations:
-      required: true
+    - type: textarea
+      id: current
+      attributes:
+          label: Current Performance
+          description: What's the current state?
+      validations:
+          required: true
+    - type: textarea
+      id: expected
+      attributes:
+          label: Expected Performance
+          description: What's the target performance?
+      validations:
+          required: true

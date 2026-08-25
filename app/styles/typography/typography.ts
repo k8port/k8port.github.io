@@ -1,15 +1,11 @@
 export const typography = {
     font: {
-        spacegrotesk: ['Space Grotesk', 'sans-serif'],
-        martianmono: ['Martian Mono', 'monospace'],
-        greatvibes: ['Great Vibes', 'cursive'],
-        dmserifdisplay: ['DM Serif Display', 'serif'],
-        garamond: ['Cormorant Garamond', 'serif'],
-        sans: ['Space Grotesk', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'serif'],
-        cursive: ['Great Vibes', 'cursive'],
-        mono: ['Martian Mono', 'monospace'],
-        caption: ['Space Grotesk', 'sans-serif'],
+        josefinsans: ['Josefin Sans', 'sans-serif'],
+        zillaslab: ['Zilla Slab', 'serif'],
+        sans: ['Josefin Sans', 'sans-serif'],
+        serif: ['Zilla Slab', 'serif'],
+        cursive: ['Lobster', 'cursive'],
+        caption: ['Josefin Sans', 'sans-serif'],
         lobster: ['Lobster', 'cursive'],
     },
     fontSize: {
@@ -24,5 +20,5 @@ export const typography = {
         '5xl': '33px',
         '6xl': '37px',
         '7xl': '41px',
-    }
+    },
 };

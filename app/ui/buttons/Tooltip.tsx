@@ -4,12 +4,12 @@ const Tooltip = ({ message, children }: { message: string; children: ReactNode }
     return (
         <div className="relative flex flex-col items-center group">
             {children}
-            <div className="absolute top-[40%] left-[100%] flex flex-col items-center hidden mt-2 group-hover:flex">
+            <div className="absolute top-[40%] left-full flex flex-col items-center mt-2 group-hover:flex">
                 <span
                     className={`
                     relative z-99 
                     p-3 text-xs
-                    font-martianmono 
+                    font-josefinsans
                     text-center text-pretty
                     leading-normal 
                     text-brand-secondaryvar 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface BlobDataDef {
     id: string;
     d: string;
@@ -30,8 +28,8 @@ export const blobData: BlobDataDef[] = [
     {
         id: 'blob3',
         d: 'M635.5 694C592.332 659.127 584.067 559.095 611.512 524.797C641.58 549.214 619.593 559.565 644.188 579C640.445 603.067 681.109 605.553 762 637.5C737.916 658.181 683.5 673.837 656.086 673.837C644.188 673.837 649.688 694 635.5 694Z',
-        patternId: 'pattern5_679_49'
-    }
+        patternId: 'pattern5_679_49',
+    },
 ];
 
 export const N = blobData.length;

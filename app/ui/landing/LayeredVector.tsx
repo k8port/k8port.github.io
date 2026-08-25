@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import AnimatedMuse from "./vector/AnimatedMuse";
-import { AnimatedMuseGroup } from "./vector/AnimatedMuseGroup";
+import React from 'react';
+import Image from 'next/image';
+import clsx from 'clsx';
+import { AnimatedMuseGroup } from './vector/AnimatedMuseGroup';
 
 interface LayeredVectorProps {
     className: string;
@@ -24,7 +24,7 @@ export default function LayeredVector({ className }: LayeredVectorProps) {
                 <AnimatedMuseGroup className="absolute top-2 right-33 size-18" />
                 <AnimatedMuseGroup className="absolute top-2 right-34 size-12" />
                 <AnimatedMuseGroup className="absolute top-2 right-34 size-14" />
-                
+
                 <AnimatedMuseGroup className="absolute top-3 right-35 size-16" />
                 <AnimatedMuseGroup className="absolute top-3 right-33 size-18" />
                 <AnimatedMuseGroup className="absolute top-3 right-34 size-12" />
@@ -50,16 +50,11 @@ export default function LayeredVector({ className }: LayeredVectorProps) {
                     alt="Vector Figure"
                     width={width}
                     height={height}
-                    className={`
-                        absolute right-0
-                        object-cover
-                        opacity-85
-                        priority
-                        aspect-[${aspectRatio}]
-                        h-dvh
-                        sm:h-full
-                        min-w-[285px]
-                    `}
+                    style={{ aspectRatio }}
+                    className={clsx(
+                        'absolute right-0 object-cover opacity-85 priority h-dvh sm:h-full min-w-[285px] transition-all duration-300',
+                        'dark:[filter:invert(1)_hue-rotate(180deg)_brightness(1.05)_contrast(1.15)]'
+                    )}
                 />
             </div>
         </div>

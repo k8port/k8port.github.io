@@ -1,9 +1,10 @@
+'use client';
 // src/components/AnimatedMuseSVG.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MUSES } from '../../../data/MUSES';
 
-const rand = (min: number, max: number) => Math.random()*(max-min)+min;
+const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 const isFalling = () => Math.random() < 0.45;
 
 interface AnimatedMuseSVGProps {
@@ -11,8 +12,23 @@ interface AnimatedMuseSVGProps {
 }
 
 export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
-    const screenW = typeof window !== "undefined" ? window.innerWidth : 1920;
-    const screenH = typeof window !== "undefined" ? window.innerHeight : 1080;
+    const screenW = typeof window !== 'undefined' ? window.innerWidth : 1920;
+    const screenH = typeof window !== 'undefined' ? window.innerHeight : 1080;
+
+    type MuseAnimation = {
+        x: number | number[];
+        y: number | number[];
+        rotate: number | number[];
+        opacity?: number[];
+    };
+    type MuseTransition = {
+        duration: number;
+        ease: 'easeInOut';
+        repeat: number;
+        repeatType: 'loop';
+        delay: number;
+        times?: number[];
+    };
 
     return (
         <div className="w-full relative">
@@ -22,7 +38,7 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                 xmlns="http://www.w3.org/2000/svg"
                 className={`w-full h-auto overflow-visible ${className}`}
             >
-                {MUSES.map(({id, paths}, i) => {
+                {MUSES.map(({ id, paths }, i) => {
                     // generate per-muse random target
 
                     const falling = isFalling();
@@ -31,7 +47,7 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                     const swirlTo = {
                         x: rand(-screenW * 4, -screenW),
                         y: rand(-215, 215),
-                        rotate: rand(-2160, 2160)
+                        rotate: rand(-2160, 2160),
                     };
 
                     // drift downward animation
@@ -41,10 +57,9 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                         rotate: rand(-90, 90),
                     };
 
+                    let animate: MuseAnimation;
+                    let transition: MuseTransition;
 
-                    let animate: any;
-                    let transition: any;
-                    
                     if (falling) {
                         animate = {
                             x: [screenW, swirlTo.x, fallTo.x],
@@ -62,7 +77,7 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                             times: [0, 0.3, 1],
                         };
                     } else {
-                        animate = swirlTo;
+                        animate = { ...swirlTo, opacity: [1] };
                         transition = {
                             duration: rand(8, 16),
                             ease: 'easeInOut',
@@ -71,15 +86,15 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                             delay: i * 0.3,
                         };
                     }
-        
+
                     return (
                         <motion.g
                             key={id}
                             id={id}
-                            initial={{ x:0, y:0, rotate:0 }}
+                            initial={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
                             animate={animate}
                             transition={transition}
-                        > 
+                        >
                             {paths.map((attrs, j) => (
                                 <path key={j} {...attrs} />
                             ))}
@@ -87,7 +102,6 @@ export default function AnimatedMuseSVG({ className }: AnimatedMuseSVGProps) {
                     );
                 })}
             </motion.svg>
-
         </div>
     );
 }

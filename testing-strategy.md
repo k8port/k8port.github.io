@@ -1,130 +1,75 @@
-# Unit Testing Strategy
+# Testing Strategy
 
-Following is a comprehensive unit testing strategy for this application broken down into different aspects to be tested:
+This document reflects the current implemented baseline and CI-enforced checks.
 
-## Component Testing
+## Current baseline
 
-    Test individual React components for:
+- Test runner: Jest 29
+- Environment: `jsdom`
+- Transform: `ts-jest` with ESM preset
+- Assertions: `@testing-library/jest-dom`
+- Location pattern: `app/**/__tests__/**/*.test.(ts|tsx|js|jsx)`
 
-      * Rendering without crashing
-      * Proper display of props
-      * State management
-      * User interactions
-      * Component lifecycle behaviors
+Config source:
 
-An example unit test using Jest and React Testing Library:
+- [jest.config.mjs](jest.config.mjs)
+- [jest.setup.ts](jest.setup.ts)
 
-    ```typescript
-    import { render, screen, fireEvent } from '@testing-library/react'
-    import Component from './Component'
+## Existing test coverage (baseline)
 
-    describe('Component', () => {
-        test('renders correctly with default props', () => {
-        render(<Component />)
-        expect(screen.getByRole('heading')).toBeInTheDocument()
-    })
+Current committed baseline tests include:
 
-    test('handles user interaction correctly', () => {
-        render(<Component />)
-        const button = screen.getByRole('button')
-        fireEvent.click(button)
-        expect(screen.getByText('Changed State')).toBeInTheDocument()
-    })
-    ```
+- page render smoke check: [app/__tests__/page.test.tsx](app/__tests__/page.test.tsx)
+- blend mode helper behavior: [app/lib/actions/__tests__/blendMode.test.ts](app/lib/actions/__tests__/blendMode.test.ts)
+- contact mailto transport URL behavior: [app/lib/contact/__tests__/transport.test.ts](app/lib/contact/__tests__/transport.test.ts)
 
-## Data Loading and Processing
+These validate basic rendering and key utility/action behavior without introducing fragile snapshot coupling.
 
-    Using JSON data, test:
+## CI-enforced checks
 
-    * Correct data loading
-    * Data transformation functions
-    * Error handling when data is malformed
-    * Edge cases in data processing
+PRs to `main` run tests in GitHub Actions:
 
-Example unit test for data processing:
+- workflow: [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml)
+- command: `pnpm test:ci`
 
-    ```typescript
-    import { processData } from './dataUtils'
-    import mockData from './__mocks__/mockData.json'
+`test:ci` currently maps to:
 
-    describe('Data Processing', () => {
-        test('processes valid JSON data correctly', () => {
-        const result = processData(mockData)
-        expect(result).toMatchSnapshot()
-    })
+```bash
+jest --ci --runInBand
+```
 
-    test('handles empty data gracefully', () => {
-        const result = processData({})
-        expect(result).toEqual([])
-    })
-    ```
+## Local developer workflow
 
-## UI State Management
+Recommended local verification before opening a PR:
 
-    _Test any state management logic_:
+```bash
+pnpm lint
+pnpm test:ci
+pnpm build
+```
 
-      - Initial state setup
-      - State updates
-      - Side effects
-      - Error states
+For active test development:
 
-Example unit test for utility functions:
+```bash
+pnpm test:watch
+```
 
-    ```typescript
-    import { formatDate, calculateTotal } from './utils'
+For cache resets while troubleshooting:
 
-    describe('Utility Functions', () => {
-        test('formatDate formats dates correctly', () => {
-        const date = new Date('2024-02-08')
-        expect(formatDate(date)).toBe('Feb 8, 2024')
-    })
+```bash
+pnpm test:clear
+```
 
-    test('calculateTotal handles different number formats', () => {
-        expect(calculateTotal([1.99, 2.50, 3])).toBe(7.49)
-    })
-    ```
+## Near-term test plan
 
-## Accessibility Testing
+1. Add focused tests for contact form state transitions and submission outcomes (success/error).
+2. Add tests for route and transport boundaries where behavior was recently refactored.
+3. Expand utility-level tests for data adapters and rendering helpers with deterministic fixtures.
+4. Keep tests behavior-oriented and avoid broad snapshot-only coverage.
 
-    Include tests for accessibility:
+## Quality principles
 
-    ```typescript
-    import { render } from '@testing-library/react'
-    import { axe } from 'jest-axe'
-
-    describe('Accessibility', () => {
-        test('has no accessibility violations', async () => {
-            const { container } = render(<Component />)
-            const results = await axe(container)
-            expect(results).toHaveNoViolations()
-        })
-    })
-    ```
-
-## Responsive Design
-
-    Test component behavior at different viewport sizes:
-
-    ```typescript
-    import { render } from '@testing-library/react'
-    import { act } from 'react-dom/test-utils'
-
-    describe('Responsive Design', () => {
-        test('adapts to mobile viewport', () => {
-            global.innerWidth = 375
-            act(() => {
-                global.dispatchEvent(new Event('resize'))
-            })
-            const { container } = render(<Component />)
-            expect(container.querySelector('.mobile-class')).toBeInTheDocument()
-        })
-    ```
-
-## Key Testing Principles to Follow
-
-    - Write tests that mirror real usage patterns
-    - Test both success and error paths
-    - Keep tests isolated and independent
-    - Use meaningful test descriptions
-    - Mock external dependencies appropriately
-    - Test edge cases and boundary conditions
+1. Prefer deterministic tests over timing-dependent assertions.
+2. Keep each test scoped to one behavior.
+3. Mock external boundaries only (network/services), not internal logic under test.
+4. Update docs and tests together when behavior changes.

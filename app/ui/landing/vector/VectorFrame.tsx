@@ -51,21 +51,23 @@ export default function VectorFrame({ className, ...props }: VectorFrameProps) {
     return (
         <div
             className={className}
-            style={{
-                '--v-top':    `${top}px`,
-                '--v-tiny-top': `${tinyTop}px`,
-                '--v-sm-top': `${smTop}px`,
-                '--v-md-top': `${mdTop}px`,
-                '--v-lg-top': `${lgTop}px`,
-                '--v-lgdt-top': `${lgdtTop}px`,
+            style={
+                {
+                    '--v-top': `${top}px`,
+                    '--v-tiny-top': `${tinyTop}px`,
+                    '--v-sm-top': `${smTop}px`,
+                    '--v-md-top': `${mdTop}px`,
+                    '--v-lg-top': `${lgTop}px`,
+                    '--v-lgdt-top': `${lgdtTop}px`,
 
-                '--v-left':    `${left}px`,
-                '--v-tiny-left':    `${tinyLeft}px`, 
-                '--v-sm-left': `${smLeft}px`,
-                '--v-md-left': `${mdLeft}px`,
-                '--v-lg-left': `${lgLeft}px`,
-                '--v-lgdt-left': `${lgdtLeft}px`,
-            } as React.CSSProperties}
+                    '--v-left': `${left}px`,
+                    '--v-tiny-left': `${tinyLeft}px`,
+                    '--v-sm-left': `${smLeft}px`,
+                    '--v-md-left': `${mdLeft}px`,
+                    '--v-lg-left': `${lgLeft}px`,
+                    '--v-lgdt-left': `${lgdtLeft}px`,
+                } as React.CSSProperties
+            }
         >
             <VectorFigure
                 className={`

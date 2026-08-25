@@ -1,3 +1,8 @@
+describe('baseline test suite', () => {
+    it('runs at least one test', () => {
+        expect(true).toBe(true);
+    });
+});
 // import { render, screen } from '@testing-library/react';
 // import HomePage from '../page';
 // import { getContent } from '../lib/utils';

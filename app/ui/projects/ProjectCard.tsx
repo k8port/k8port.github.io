@@ -3,10 +3,15 @@ import ContentBox from './ContentBox/ContentBox';
 
 interface ProjectCardProps {
     project: {
+        key: string;
+        slug: string;
         title: string;
         description: string;
         image?: string;
-        link: string;
+        github: string;
+        portfolioRoute?: string;
+        externalLiveUrl?: string;
+        liveStatus?: 'planned' | 'in-progress' | 'live';
         tags?: string[];
         year?: number;
     };
@@ -20,7 +25,10 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                 title={project.title}
                 text={project.description}
                 category={`${project.tags?.join(', ')}`}
-                link={project.link}
+                github={project.github}
+                portfolioRoute={project.portfolioRoute}
+                externalLiveUrl={project.externalLiveUrl}
+                liveStatus={project.liveStatus}
                 image={project.image}
                 has_button={true}
             />

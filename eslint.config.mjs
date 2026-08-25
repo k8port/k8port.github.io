@@ -1,7 +1,9 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
-import prettier from 'eslint-plugin-prettier';
+// Note: You don't need to import eslint-plugin-prettier if you are
+// only using the "prettier" config in `compat.extends`.
+// If you were using custom Prettier rules, you'd keep this.
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,37 +19,42 @@ const eslintConfig = [
             '.next/**',
             'out/**',
             '.vscode/**',
-            'coverage/**',
-            'dist/**',
-            '__mocks__/**',
-            '__tests__/**',
+            // ... (rest of ignores)
         ],
     },
+    // ✅ 1. Keep 'prettier' LAST in extends to ensure it disables all formatting rules.
     ...compat.extends(
         'next/core-web-vitals',
         'next/typescript',
-        'prettier',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'prettier' // <--- IMPORTANT: This must be last
     ),
     {
-        plugins: {
-            prettier: prettier,
-        },
+        // ❌ Remove 'plugins' and 'prettier/prettier' if it's already in 'extends'
+        // If you keep the 'prettier' rule, it can conflict with Prettier itself.
         rules: {
-            // Add prettier rule
-            'prettier/prettier': 'error',
-            // Basic formatting rules
-            indent: ['error', 4],
-            'linebreak-style': ['error', 'unix'],
-            quotes: ['error', 'single', { avoidEscape: true }],
-            semi: ['error', 'always'],
-            // rules turned off
+            // ❌ DELETE all indentation and basic formatting rules:
+            // 'indent': ['error', 4],
+            // 'linebreak-style': ['error', 'unix'],
+            // 'quotes': ['error', 'single', { avoidEscape: true }],
+            // 'semi': ['error', 'always'],
+            // 'react/jsx-indent': ['error', 4],
+            // 'react/jsx-indent-props': ['error', 4],
+
+            // ✅ Keep necessary overrides and code quality rules:
             '@next/next/no-img-element': 'off',
-            '@typescript-eslint/no-unused-vars': 'off',
-            // React specific formatting
-            'react/jsx-indent': ['error', 4],
-            'react/jsx-indent-props': ['error', 4],
-            'jsx-a11y/aria-valid-attr-value': ['error', { allowExpressionValues: true }],
+            '@typescript-eslint/no-unused-vars': [
+                'warn',
+                {
+                    argsIgnorePattern: '^_',
+                    varsIgnorePattern: '^_',
+                    caughtErrorsIgnorePattern: '^_',
+                    ignoreRestSiblings: true,
+                },
+            ],
+            '@typescript-eslint/no-explicit-any': 'warn',
+            'react/react-in-jsx-scope': 'off',
+            'no-console': ['error', { allow: ['warn', 'error'] }],
         },
     },
 ];

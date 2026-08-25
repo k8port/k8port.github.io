@@ -4,13 +4,13 @@ This cheat sheet documents Vim commands for efficient multi-line editing and for
 
 ## Formatting Commands
 
-| Command | Action |
-|---------|--------|
-| `gg=G` | Format entire document |
-| `gq` | Quick format document (custom mapping) |
-| `==` | Format current line |
-| `<Space>f` | Format document using leader key |
-| `ctrl+;` | Force Prettier formatting (custom key binding) |
+| Command    | Action                                         |
+| ---------- | ---------------------------------------------- |
+| `gg=G`     | Format entire document                         |
+| `gq`       | Quick format document (custom mapping)         |
+| `==`       | Format current line                            |
+| `<Space>f` | Format document using leader key               |
+| `ctrl+;`   | Force Prettier formatting (custom key binding) |
 
 ## Multi-Line Editing in Vim
 
@@ -71,16 +71,16 @@ This cheat sheet documents Vim commands for efficient multi-line editing and for
 
 ## Useful Formatting Commands
 
-| Shortcut | Action |
-|----------|--------|
-| `Cmd+F` | Format Document |
-| `Cmd+Shift+I` | Format Document (Alternative) |
-| `Ctrl+Alt+F` | Format Document (Alternative 2) |
-| `Ctrl+;` | Force Prettier Format |
+| Shortcut      | Action                          |
+| ------------- | ------------------------------- |
+| `Cmd+F`       | Format Document                 |
+| `Cmd+Shift+I` | Format Document (Alternative)   |
+| `Ctrl+Alt+F`  | Format Document (Alternative 2) |
+| `Ctrl+;`      | Force Prettier Format           |
 
 ## Custom Vim Features
 
 - Uses space as leader key
 - Automatically saves system clipboard
 - Smart indentation enabled
-- Tab width set to 2 spaces 
+- Tab width set to 2 spaces

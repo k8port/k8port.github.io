@@ -1,0 +1,223 @@
+= Portfolio Operating Playbook (Human + Copilot)
+Kiki Portalatin <k8@k8port.io>
+version: 2026-05-03
+:toc:
+
+Single-page workflow for executing the active GitHub board with clear ownership, cadence, and quality gates.
+
+== 1) Operating Objective
+
+. Reduce production risk first.
+. Keep work in small, mergeable increments.
+. Preserve traceability from issue -> branch -> PR -> verification.
+. Close issues only when acceptance criteria are validated.
+
+== 2) Default Execution Model
+
+Use this combined model unless a task requires a temporary override.
+
+. Strategy: Two-Track Execution
+.. Track A (Platform): #49, #55, #56, #58.
+.. Track B (Product): #51, #50, #57, #52, #54, #53.
+. Delivery style: Micro-PR Flow (target less than 200 LOC per PR when practical).
+. Quality posture: Test-Guarded for #50, #51, #55, #56.
+
+== 3) Collaboration Modes
+
+Choose one mode per issue before implementation starts.
+
+. Autonomous Executor (lowest interaction)
+.. Human: sets scope and approves merge.
+.. Assistant: implements and verifies end-to-end.
+.. Use for low-ambiguity tasks.
+. Manager + Delegate (light interaction)
+.. Human: sets acceptance criteria and priorities.
+.. Assistant: executes and reports midpoint/final status.
+.. Use for medium-risk tasks.
+. Pairing Loop (high interaction)
+.. Human: makes tradeoff decisions in real time.
+.. Assistant: iterates rapidly between decisions.
+.. Use for architecture-sensitive tasks.
+. Reviewer First
+.. Human: writes code.
+.. Assistant: performs bug-risk review and patch suggestions.
+.. Use when branch ownership must stay human-led.
+. Coach Mode
+.. Human: implements directly.
+.. Assistant: guides with step-by-step recommendations.
+.. Use for learning-heavy tasks.
+
+== 4) Mode Selection Rules
+
+. Start with Autonomous Executor if scope is clear and under 2 hours.
+. Switch to Pairing Loop when requirements are ambiguous or architecture is impacted.
+. Switch to Reviewer First when a PR touches 3 or more subsystems.
+. Use Coach Mode when learning speed is more valuable than delivery speed.
+
+== 4.1) Interaction Level by Active Task
+
+Use this as the default at issue kickoff.
+
+. [.line-through]#49 Remove accidental dependency snapshot directory#
+.. [.line-through]#Interaction level: Medium#
+.. [.line-through]#Recommended mode: Manager + Delegate#
+.. [.line-through]#Why: high repo impact but low product ambiguity#
+. [.line-through]#50 Fix contact subject interpolation bug#
+.. [.line-through]#Interaction level: Medium#
+.. [.line-through]#Recommended mode: Pairing Loop#
+.. [.line-through]#Why: small change, but tied to contact architecture decisions and regression risk#
+. [.line-through]#51 Align contact architecture with deployment model#
+.. [.line-through]#Interaction level: High#
+.. [.line-through]#Recommended mode: Pairing Loop#
+.. [.line-through]#Why: decision-heavy, affects flow, config, and future issue scope#
+. [.line-through]#52 Refactor duplicated landing layout JSX#
+.. [.line-through]#Interaction level: Medium#
+.. [.line-through]#Recommended mode: Manager + Delegate#
+.. [.line-through]#Why: visual/structure sensitivity with manageable technical ambiguity#
+. #53 Remove production debug logging and enforce policy
+.. #Interaction level: Low#
+.. Recommended mode: Autonomous Executor
+.. Why: mostly mechanical cleanup with policy checks.
+. #54 Replace invalid dynamic Tailwind class usage
+.. Interaction level: Low
+.. Recommended mode: Autonomous Executor
+.. Why: narrow, local UI fix with clear acceptance criteria.
+. #55 Activate baseline tests and configure Jest
+.. Interaction level: Medium
+.. Recommended mode: Manager + Delegate
+.. Why: cross-cutting setup with deterministic outcomes.
+. #56 Tighten ESLint rules for unused vars and any
+.. Interaction level: Medium
+.. Recommended mode: Manager + Delegate
+.. Why: may trigger broad edits; needs staged rollout and review gates.
+. #57 Fix duplicate email template prop declaration
+.. Interaction level: Low
+.. Recommended mode: Autonomous Executor
+.. Why: tiny, isolated type hygiene change.
+. #58 Refresh README and testing strategy docs
+.. Interaction level: Low
+.. Recommended mode: Autonomous Executor + Reviewer First final pass
+.. Why: straightforward updates; final quality pass ensures clarity and consistency.
+
+Escalation trigger:
+
+. Upgrade any task to High interaction if implementation touches 3 or more subsystems, changes deployment behavior, or requires architecture decisions.
+
+== 5) Daily Cadence
+
+. Daily start (10 minutes)
+.. Select one primary issue and one backup issue.
+.. Confirm mode, acceptance criteria, and done conditions.
+. Build block (60-120 minutes)
+.. Implement one micro-PR maximum.
+.. Run required checks before requesting review.
+. Review block (20-30 minutes)
+.. Review results and open risks.
+.. Decide merge, rework, or split.
+. Daily close (10 minutes)
+.. Update issue with progress note and next action.
+
+== 6) Weekly Cadence
+
+. Monday planning
+.. Commit to up to 3 in-progress issues total.
+.. Prioritize by risk and dependency order.
+. Midweek risk check
+.. Resolve blocked items or de-scope quickly.
+. Friday review
+.. Verify done items include evidence and documentation updates.
+.. Carry over only explicitly planned work.
+
+== 7) Issue Lifecycle
+
+. Ready
+.. Acceptance criteria and scope are clear.
+.. Dependencies are listed.
+. In Progress
+.. Branch created from issue number.
+.. Collaboration mode selected.
+. In Review
+.. PR opened and linked to issue.
+.. Verification evidence added.
+. Done
+.. PR merged.
+.. Post-merge checks pass.
+.. Issue comment summarizes outcome.
+
+== 8) PR Checklist (Minimum)
+
+. Scope
+.. Only issue-scoped changes included.
+. Verification
+.. Lint passes.
+.. Tests pass (or documented reason if not applicable).
+.. Build passes for deployment target.
+. Evidence
+.. Include command output summary and any screenshots when UI changes.
+. Traceability
+.. PR body includes closes #issue-number.
+. Risk
+.. Include rollback notes for non-trivial changes.
+
+== 9) Definition of Done by Issue Type
+
+. Bug fix
+.. Reproduction documented.
+.. Fix verified.
+.. Regression test added where practical.
+. Architecture/flow
+.. Decision recorded.
+.. Conflicting paths removed or deprecated.
+.. Docs updated.
+. CI/testing
+.. Pipeline green on PR.
+.. New checks documented.
+.. Failure modes explained.
+. Refactor/tech debt
+.. Behavior unchanged.
+.. Complexity reduced and verified.
+.. No new lint/type/build warnings in touched area.
+. Docs
+.. Commands and workflow are runnable as written.
+.. Docs reflect current stack and deployment model.
+
+== 10) Blocker Escalation Protocol
+
+. Soft block (less than 30 minutes)
+.. Assistant proposes 2 options with tradeoffs.
+. Hard block (30-120 minutes)
+.. Pause implementation.
+.. Human decides option and updated scope.
+. Critical block (more than 120 minutes or high-risk)
+.. Split issue.
+.. Land safe partial changes.
+.. Open follow-up issue with explicit blocker notes.
+
+== 11) Communication Contract
+
+. One active issue at a time unless explicitly parallelized.
+. Every update must include:
+.. what changed
+.. what was verified
+.. what remains
+. Human approval required before closing issue or merging high-risk PR.
+. End each issue with a 3-line retrospective:
+.. keep
+.. change
+.. stop
+
+== 12) Current Recommended Sequence
+
+. #49 -> #51 -> #50/#57 -> #52 -> #53 -> #55 -> #56 -> #58 -> #54
+. If blocked, execute next independent issue from Track A.
+
+== Kickoff Prompt
+Use this prompt to start each issue with the appropriate mode and cadence.
+
+[IMPORTANT]
+====
+- Kick off standup.
+- Use single-issue cadence from daily-operating-checklist.adoc.
+- Use interaction recommendations from github-project-copilot-workflow.adoc.
+- Propose today’s primary issue, backup issue, mode, success criteria, and first micro-PR.
+====

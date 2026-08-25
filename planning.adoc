@@ -1,0 +1,498 @@
+= Project Execution Plan: May 2026
+Kiki Portalatin <k8@k8port.io>
+version: 2026-05-01
+
+Convert audit into execution task board and practical automation blueprint using GitHub Projects plus Copilot, then persist that as updated session plan for handoff. Updated session plan file to have reusable implementation checklist.
+
+Replaced session plan with task breakdown mapped to GitHub Project fields and automation rules so it can be executed directly as project board workflow
+
+== Plan: Portfolio Upgrade Tasks + Automation
+
+_execution blueprint for GitHub Project_
+
+=== **Task Breakdown List**: _create as "Issues" in given order_
+
+. Remove accidental dependency snapshot directory and clean git history for path `Target: chore: sync pnpm lockfile`
+
+. Fix contact email subject interpolation bug `Target: contact.ts`
+
+. Decide and implement on Contacts architecture: static mailto or API route.  `Targets: next.config.ts, route.ts, ContactForm.tsx, ContactForm_v1.tsx`
+
+. Consolidate broken/duplicated landing layout JSX  `Target: LandingContent.tsx`
+
+. Remove production debug logging and add env-gated logger policy.  `Targets: index.ts, contact.ts, route.ts, useBreakpointDebug.ts, useWindowSize.ts`
+
+. Fix dynamic Tailwind class pattern in vector component `Target: LayeredVector.tsx`
+
+. Activate baseline tests and add real Jest setup `Targets: page.test.tsx, package.json, nextjs.yml`
+
+. Tighten lint rules for dead code and explicit `any` usage.  `Target: eslint.config.mjs`
+
+. Fix duplicate prop declaration in email template type `Target: EmailTemplate.tsx`
+
+. Refresh contributor docs for actual stack, scripts, deploy model, and testing flow.  `Targets: README.md, testing-strategy.md`
+
+== GitHub Projects Setup (Automation-Ready)
+
+. Create new Project: _Portfolio Stabilization 2026_
+. Add custom fields: `Status`, `Priority`, `Severity`, `Area`, `Effort`, `Sprint`, `Risk`, `Linked PR`, `Blocked Reason` 
+. Set Status options: `Inbox`, `Ready`, `In Progress`, `In Review`, `Blocked`, `Done` 
+. Create saved views:
+.. By Severity
+.. This Sprint
+.. In Progress
+.. Blocked
+.. Done This Week  
+. Create label taxonomy in repo:
+.. Priority: p0, p1, p2, p3
+.. Area: area-frontend, area-backend, area-ci, area-content
+.. Type: bug, tech-debt, docs, test
+.. Flow: ready, blocked
+
+== GitHub Projects Automation Rules
+
+In Project settings → Workflows/Automations, configure:
+
+. Auto-add to project when issue opened with label portfolio-2026.  
+. Set Status to Ready when labels include ready and size-estimated.  
+. Set Status to In Progress when issue is assigned.  
+. Set Status to In Review when linked PR is opened.  
+. Set Status to Done when linked PR is merged.  
+. Map labels to fields:
+. p0/p1/p2/p3 → Priority
+. area-* → Area
+. bug/tech-debt/docs/test → Item Type or Category field
+
+== Copilot + Projects Operating Loop
+
+. Pick next item from Ready view (top by Severity + Priority).  
+. Open issue in VS Code and ask Copilot to implement only that issue scope.  
+. Branch naming: fix/<issue-number>-<short-topic>.  
+. Require PR body template with:
+.. What changed
+.. Why
+.. Test evidence
+.. Risk notes  
+.. Include closes #<issue-number> in PR for traceability and auto-close.  
+.. Move project item to In Review only after local lint/tests pass.  
+.. Merge PR, verify project auto-moves to Done, then run quick regression check.
+
+== Recommended First Sprint: fastest risk reduction
+
+. Remove accidental directory chore: sync pnpm lockfile.  
+. Fix contact bug in contact.ts.  
+. Decide deploy mode by reconciling next.config.ts with route.ts.  
+. Turn on baseline tests from page.test.tsx.  
+. Remove high-noise logging from index.ts.
+
+Session plan updated at `/memories/session/plan.md`
+
+== Decision on Deployment Target
+
+Decision: treat this repository as GitHub Pages static for the current execution cycle.
+
+Rationale:
+
+. Existing workflow is already built around GitHub Pages artifact deploy.
+. Static-first removes runtime drift while core quality fixes are implemented.
+. Contact handling should use client-side mailto or external form/email service while static remains the target.
+
+Future option:
+
+. Re-evaluate migration to a server-capable host after stability work is complete and if API-backed features become mandatory.
+
+== GitHub Issues: Titles, Descriptions, Acceptance Criteria
+
+=== 1) Remove accidental dependency snapshot directory from repository
+
+*Description*
+
+The repository contains an accidental dependency snapshot tree under `chore: sync pnpm lockfile`, including thousands of third-party files. This bloats git history and introduces maintenance and licensing risk.
+
+Scope:
+
+. Remove the directory from tracked files.
+. Ensure it is ignored going forward.
+. Verify workspace and CI still install dependencies from the intended lockfile.
+
+*Acceptance Criteria*
+
+. `chore: sync pnpm lockfile` no longer exists in the tracked repository tree.
+. A guard (gitignore or workflow check) prevents reintroduction of this path.
+. Fresh install and build succeed after cleanup.
+
+=== 2) Fix contact subject interpolation bug in server action
+
+*Description*
+
+Contact notification subject currently uses a non-interpolated string and sends literal `${firstname}` in messages.
+
+Scope:
+
+. Fix subject construction in `app/lib/actions/contact.ts`.
+. Add a small test that proves real name interpolation.
+
+*Acceptance Criteria*
+
+. Submitted contact form produces subject containing actual first name.
+. Test fails before fix and passes after fix.
+. No regressions in existing contact form behavior.
+
+=== 3) Align contact architecture with static deployment model
+
+*Description*
+
+The codebase currently mixes static export assumptions with API-route-based contact logic and a separate mailto flow. Consolidate to one architecture compatible with GitHub Pages static deployment.
+
+Scope:
+
+. Choose static-compatible contact approach as source of truth.
+. Remove or archive conflicting path(s).
+. Update deploy/build assumptions in config and docs.
+
+*Acceptance Criteria*
+
+. Exactly one contact submission path is active in production code.
+. `next.config.ts` and contact implementation are deployment-compatible.
+. User can complete contact flow successfully in deployed static site.
+
+=== 4) Refactor broken and duplicated landing layout JSX
+
+*Description*
+
+Landing content includes duplicated and difficult-to-maintain JSX blocks that increase regression risk.
+
+Scope:
+
+. Consolidate duplicated layout structures in `LandingContent.tsx`.
+. Preserve intended desktop/mobile output.
+. Remove stale commented fragments not tied to active features.
+
+*Acceptance Criteria*
+
+. Landing component renders with one coherent layout tree.
+. No visual regression on mobile and desktop breakpoints.
+. File readability improves with reduced duplication.
+
+=== 5) Remove production debug logging and enforce logging policy
+
+*Description*
+
+Debug logs are present in contact, email, and viewport hooks. These logs create noise and potential data exposure.
+
+Scope:
+
+. Remove raw debug `console` calls from production paths.
+. If logging is needed, gate it by environment and sanitize sensitive values.
+. Document logging policy in contribution docs.
+
+*Acceptance Criteria*
+
+. No sensitive values are logged in production execution path.
+. Debug logs only appear in explicitly enabled development mode.
+. Lint/checks enforce or flag future direct debug logging in critical paths.
+
+=== 6) Replace invalid dynamic Tailwind class usage in layered vector
+
+*Description*
+
+Vector component builds Tailwind class names dynamically for aspect ratio, which may not be emitted reliably by Tailwind compilation.
+
+Scope:
+
+. Replace dynamic utility string with static utility or inline style.
+. Keep visual behavior consistent across breakpoints.
+
+*Acceptance Criteria*
+
+. Aspect ratio is applied consistently in local and production builds.
+. No runtime-generated Tailwind class dependency remains for this behavior.
+. Visual output matches expected hero layout.
+
+=== 7) Activate baseline tests and configure Jest properly
+
+*Description*
+
+Test scaffolding exists but active coverage is effectively absent. CI runs tests, but baseline confidence is low.
+
+Scope:
+
+. Add root Jest config and setup compatible with Next.js app routing and aliases.
+. Replace commented scaffold with at least core smoke tests.
+. Ensure CI executes test step reliably.
+
+*Acceptance Criteria*
+
+. Jest runs locally with passing baseline suite.
+. CI test step passes on pull requests.
+. At least homepage render and one business logic path are covered.
+
+=== 8) Tighten ESLint quality rules for dead code and any usage
+
+*Description*
+
+Current lint settings disable key safeguards that catch dead code and unsafe typing patterns.
+
+Scope:
+
+. Re-enable rules for unused variables and explicit `any` at warning or error level.
+. Fix or suppress existing violations intentionally with rationale.
+
+*Acceptance Criteria*
+
+. Lint reports unused and explicit-any issues according to updated policy.
+. Existing violations in touched files are resolved or justified.
+. CI lint step remains green with the new configuration.
+
+=== 9) Fix duplicate property declaration in email template props
+
+*Description*
+
+Email template props include a duplicated property declaration, reducing clarity and maintainability.
+
+Scope:
+
+. Remove duplicate property from `EmailTemplateProps`.
+. Validate type consumers and route usage still compile.
+
+*Acceptance Criteria*
+
+. `EmailTemplateProps` defines each field exactly once.
+. Typecheck and lint pass for template and route usage.
+. No behavior change in rendered email content.
+
+=== 10) Refresh README and testing strategy documentation
+
+*Description*
+
+Project docs are partly boilerplate and not fully aligned with actual scripts, deployment, and testing workflow.
+
+Scope:
+
+. Update `README.md` with real setup, scripts, deployment target, and contributor workflow.
+. Align `testing-strategy.md` with implemented baseline and near-term test plan.
+
+*Acceptance Criteria*
+
+. README reflects current stack, commands, and deployment model.
+. Testing strategy maps to actual CI-enforced checks.
+. New contributor can run install, dev, lint, test, and build from docs alone.
+
+== GitHub Issue Paste Templates (labels + priority)
+
+Copy one block at a time into GitHub New Issue.
+
+=== Issue 1
+
+Title: Remove accidental dependency snapshot directory from repository
+Labels: portfolio-2026, bug, area-ci, tech-debt, p0, ready
+Priority: P0
+
+Description:
+
+The repository contains an accidental dependency snapshot tree under `chore: sync pnpm lockfile`, including thousands of third-party files. This bloats git history and introduces maintenance and licensing risk.
+
+Scope:
+
+. Remove the directory from tracked files.
+. Ensure it is ignored going forward.
+. Verify workspace and CI still install dependencies from the intended lockfile.
+
+Acceptance Criteria:
+
+. `chore: sync pnpm lockfile` no longer exists in the tracked repository tree.
+. A guard (gitignore or workflow check) prevents reintroduction of this path.
+. Fresh install and build succeed after cleanup.
+
+=== Issue 2
+
+Title: Fix contact subject interpolation bug in server action
+Labels: portfolio-2026, bug, area-backend, p1, ready
+Priority: P1
+
+Description:
+
+Contact notification subject currently uses a non-interpolated string and sends literal `${firstname}` in messages.
+
+Scope:
+
+. Fix subject construction in `app/lib/actions/contact.ts`.
+. Add a small test that proves real name interpolation.
+
+Acceptance Criteria:
+
+. Submitted contact form produces subject containing actual first name.
+. Test fails before fix and passes after fix.
+. No regressions in existing contact form behavior.
+
+=== Issue 3
+
+Title: Align contact architecture with static deployment model
+Labels: portfolio-2026, tech-debt, area-backend, area-ci, p0, ready
+Priority: P0
+
+Description:
+
+The codebase currently mixes static export assumptions with API-route-based contact logic and a separate mailto flow. Consolidate to one architecture compatible with GitHub Pages static deployment.
+
+Scope:
+
+. Choose static-compatible contact approach as source of truth.
+. Remove or archive conflicting path(s).
+. Update deploy/build assumptions in config and docs.
+
+Acceptance Criteria:
+
+. Exactly one contact submission path is active in production code.
+. `next.config.ts` and contact implementation are deployment-compatible.
+. User can complete contact flow successfully in deployed static site.
+
+=== Issue 4
+
+Title: Refactor broken and duplicated landing layout JSX
+Labels: portfolio-2026, bug, area-frontend, p1, ready
+Priority: P1
+
+Description:
+
+Landing content includes duplicated and difficult-to-maintain JSX blocks that increase regression risk.
+
+Scope:
+
+. Consolidate duplicated layout structures in `LandingContent.tsx`.
+. Preserve intended desktop/mobile output.
+. Remove stale commented fragments not tied to active features.
+
+Acceptance Criteria:
+
+. Landing component renders with one coherent layout tree.
+. No visual regression on mobile and desktop breakpoints.
+. File readability improves with reduced duplication.
+
+=== Issue 5
+
+Title: Remove production debug logging and enforce logging policy
+Labels: portfolio-2026, tech-debt, area-backend, area-frontend, p1, ready
+Priority: P1
+
+Description:
+
+Debug logs are present in contact, email, and viewport hooks. These logs create noise and potential data exposure.
+
+Scope:
+
+. Remove raw debug `console` calls from production paths.
+. If logging is needed, gate it by environment and sanitize sensitive values.
+. Document logging policy in contribution docs.
+
+Acceptance Criteria:
+
+. No sensitive values are logged in production execution path.
+. Debug logs only appear in explicitly enabled development mode.
+. Lint/checks enforce or flag future direct debug logging in critical paths.
+
+=== Issue 6
+
+Title: Replace invalid dynamic Tailwind class usage in layered vector
+Labels: portfolio-2026, bug, area-frontend, p2, ready
+Priority: P2
+
+Description:
+
+Vector component builds Tailwind class names dynamically for aspect ratio, which may not be emitted reliably by Tailwind compilation.
+
+Scope:
+
+. Replace dynamic utility string with static utility or inline style.
+. Keep visual behavior consistent across breakpoints.
+
+Acceptance Criteria:
+
+. Aspect ratio is applied consistently in local and production builds.
+. No runtime-generated Tailwind class dependency remains for this behavior.
+. Visual output matches expected hero layout.
+
+=== Issue 7
+
+Title: Activate baseline tests and configure Jest properly
+Labels: portfolio-2026, test, area-ci, area-frontend, p1, ready
+Priority: P1
+
+Description:
+
+Test scaffolding exists but active coverage is effectively absent. CI runs tests, but baseline confidence is low.
+
+Scope:
+
+. Add root Jest config and setup compatible with Next.js app routing and aliases.
+. Replace commented scaffold with at least core smoke tests.
+. Ensure CI executes test step reliably.
+
+Acceptance Criteria:
+
+. Jest runs locally with passing baseline suite.
+. CI test step passes on pull requests.
+. At least homepage render and one business logic path are covered.
+
+=== Issue 8
+
+Title: Tighten ESLint quality rules for dead code and explicit any usage
+Labels: portfolio-2026, tech-debt, area-ci, p2, ready
+Priority: P2
+
+Description:
+
+Current lint settings disable key safeguards that catch dead code and unsafe typing patterns.
+
+Scope:
+
+. Re-enable rules for unused variables and explicit `any` at warning or error level.
+. Fix or suppress existing violations intentionally with rationale.
+
+Acceptance Criteria:
+
+. Lint reports unused and explicit-any issues according to updated policy.
+. Existing violations in touched files are resolved or justified.
+. CI lint step remains green with the new configuration.
+
+=== Issue 9
+
+Title: Fix duplicate property declaration in email template props
+Labels: portfolio-2026, bug, area-backend, p2, ready
+Priority: P2
+
+Description:
+
+Email template props include a duplicated property declaration, reducing clarity and maintainability.
+
+Scope:
+
+. Remove duplicate property from `EmailTemplateProps`.
+. Validate type consumers and route usage still compile.
+
+Acceptance Criteria:
+
+. `EmailTemplateProps` defines each field exactly once.
+. Typecheck and lint pass for template and route usage.
+. No behavior change in rendered email content.
+
+=== Issue 10
+
+Title: Refresh README and testing strategy documentation
+Labels: portfolio-2026, docs, area-content, area-ci, p2, ready
+Priority: P2
+
+Description:
+
+Project docs are partly boilerplate and not fully aligned with actual scripts, deployment, and testing workflow.
+
+Scope:
+
+. Update `README.md` with real setup, scripts, deployment target, and contributor workflow.
+. Align `testing-strategy.md` with implemented baseline and near-term test plan.
+
+Acceptance Criteria:
+
+. README reflects current stack, commands, and deployment model.
+. Testing strategy maps to actual CI-enforced checks.
+. New contributor can run install, dev, lint, test, and build from docs alone.

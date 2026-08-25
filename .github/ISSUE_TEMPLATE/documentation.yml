@@ -3,27 +3,27 @@ name: Documentation
 description: Request documentation updates
 labels: ['documentation']
 body:
-  - type: textarea
-    id: description
-    attributes:
-      label: Documentation Need
-      description: What needs to be documented?
-    validations:
-      required: true
-  - type: dropdown
-    id: doc_type
-    attributes:
-      label: Documentation Type
-      options:
-        - README
-        - API Documentation
-        - Code Comments
-        - User Guide
-        - Other
-    validations:
-      required: true
-  - type: textarea
-    id: scope
-    attributes:
-      label: Scope
-      description: Which parts of the project does this affect?
+    - type: textarea
+      id: description
+      attributes:
+          label: Documentation Need
+          description: What needs to be documented?
+      validations:
+          required: true
+    - type: dropdown
+      id: doc_type
+      attributes:
+          label: Documentation Type
+          options:
+              - README
+              - API Documentation
+              - Code Comments
+              - User Guide
+              - Other
+      validations:
+          required: true
+    - type: textarea
+      id: scope
+      attributes:
+          label: Scope
+          description: Which parts of the project does this affect?

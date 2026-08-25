@@ -3,20 +3,20 @@ name: Content Update
 description: Request content changes
 labels: ['content']
 body:
-  - type: textarea
-    id: changes
-    attributes:
-      label: Content Changes
-      description: What content needs updating?
-    validations:
-      required: true
-  - type: checkboxes
-    id: areas
-    attributes:
-      label: Content Areas
-      options:
-        - label: Projects
-        - label: Skills
-        - label: About
-        - label: Contact
-        - label: Nav menu
+    - type: textarea
+      id: changes
+      attributes:
+          label: Content Changes
+          description: What content needs updating?
+      validations:
+          required: true
+    - type: checkboxes
+      id: areas
+      attributes:
+          label: Content Areas
+          options:
+              - label: Projects
+              - label: Skills
+              - label: About
+              - label: Contact
+              - label: Nav menu

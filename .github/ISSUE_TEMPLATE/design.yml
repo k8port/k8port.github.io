@@ -3,37 +3,37 @@ name: Design Update
 description: Request design changes
 labels: ['design']
 body:
-  - type: textarea
-    id: current_design
-    attributes:
-      label: Current Design
-      description: What's the current state?
-    validations:
-      required: true
-  - type: textarea
-    id: proposed_design
-    attributes:
-      label: Proposed Changes
-      description: What changes are needed?
-    validations:
-      required: true
-  - type: checkboxes
-    id: design_areas
-    attributes:
-      label: Affected Areas
-      options:
-        - label: Layout
-        - label: Colors
-        - label: Typography
-        - label: Components
-        - label: Responsive Design
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      options:
-        - High
-        - Medium
-        - Low
-    validations:
-      required: true
+    - type: textarea
+      id: current_design
+      attributes:
+          label: Current Design
+          description: What's the current state?
+      validations:
+          required: true
+    - type: textarea
+      id: proposed_design
+      attributes:
+          label: Proposed Changes
+          description: What changes are needed?
+      validations:
+          required: true
+    - type: checkboxes
+      id: design_areas
+      attributes:
+          label: Affected Areas
+          options:
+              - label: Layout
+              - label: Colors
+              - label: Typography
+              - label: Components
+              - label: Responsive Design
+    - type: dropdown
+      id: priority
+      attributes:
+          label: Priority
+          options:
+              - High
+              - Medium
+              - Low
+      validations:
+          required: true

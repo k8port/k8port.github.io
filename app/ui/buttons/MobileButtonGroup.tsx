@@ -19,7 +19,6 @@ export const MobileButtonGroup = ({ className }: MobileButtonGroupProps) => {
         document.getElementById('collaborate')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-
     return (
         <div className={`space-x-2 ${className}`}>
             <ButtonStyle

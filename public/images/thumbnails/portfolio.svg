@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 220" fill="none">
+  <rect width="348" height="220" rx="8" fill="#16213e"/>
+  <rect x="94" y="50" width="160" height="100" rx="8" stroke="#e94560" stroke-width="2" fill="#0f3460"/>
+  <rect x="104" y="60" width="140" height="12" rx="3" fill="#1a1a2e"/>
+  <circle cx="112" cy="66" r="3" fill="#e94560"/>
+  <circle cx="122" cy="66" r="3" fill="#f5a623"/>
+  <circle cx="132" cy="66" r="3" fill="#10b981"/>
+  <rect x="104" y="80" width="40" height="4" rx="2" fill="#e94560" opacity="0.6"/>
+  <rect x="104" y="90" width="80" height="3" rx="1.5" fill="#8892b0" opacity="0.4"/>
+  <rect x="104" y="98" width="65" height="3" rx="1.5" fill="#8892b0" opacity="0.4"/>
+  <rect x="104" y="106" width="90" height="3" rx="1.5" fill="#8892b0" opacity="0.4"/>
+  <text x="174" y="180" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="14" opacity="0.8">k8port.github.io</text>
+</svg>
