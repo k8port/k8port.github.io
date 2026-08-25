@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react';
 import LayeredVector from './LayeredVector';
 import AboutMe from './profile/AboutMe';
 import { MobileButtonGroup } from '../buttons/MobileButtonGroup';
-import { DesktopButtonGroup } from '../buttons/DesktopButtonGroup';
 import { III } from './profile/III';
 import { Greeting } from './profile/Greeting';
 import { Display } from '../typography/Display';
@@ -70,7 +69,7 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
                             greeting
                             text-4xl md:text-6xl lg:text-7xl
                             text-center
-                            text-accent
+                            text-border-strong
                             font-outline
                         `}
                         greetingText="Hello!"
@@ -80,14 +79,14 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
                         <Display
                             className="h-auto text-center animate-slide-in-left font-semibold"
                             displayText="Kate Portalatin"
-                            textColor="text-accent-strong"
+                            textColor="text-persiangreen"
                             textSize="text-5xl"
                         />
                         <Headline
                             className="mt-4 h-auto text-center animate-slide-in-left"
-                            headlineText="Full Stack Product Engineer 🜉 Data Intensive Frontends"
+                            headlineText="Full Stack Product Engineer | Data Intensive Frontends | Systems & Discovery"
                             headlineStyle="default"
-                            textColor="text-accent"
+                            textColor="text-primary"
                             textSize="text-lg"
                         />
                     </div>
@@ -96,8 +95,6 @@ const LandingContent = forwardRef<HTMLDivElement, LandingContentProps>(({ classN
 
             {/* Text container: ~50% of the page, center-aligned */}
             <AboutMe className="flex w-full flex-col gap-6 mx-auto md:w-4/5" />
-
-            <DesktopButtonGroup className="hidden self-center md:inline-flex items-start" />
 
             <LayeredVector
                 className={`

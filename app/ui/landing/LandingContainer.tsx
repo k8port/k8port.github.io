@@ -14,12 +14,16 @@ export const LandingContainer = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const { theme } = useTheme();
     const isDark = theme === 'dark';
+    const artSrc = isDark ? '/images/nouveaubrain.png' : '/images/nouveau-brain.png';
 
     return (
         <div>
             <div className="absolute inset-0 z-0 overflow-hidden bg-surface/70">
+                {isDark ? (
+                    <div className="pointer-events-none absolute inset-0 z-10 mix-blend-multiply bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_55%),linear-gradient(135deg,rgba(5,8,18,0.55),rgba(18,24,46,0.65))]" />
+                ) : null}
                 <Image
-                    src="/images/nouveau-brain.png"
+                    src={artSrc}
                     alt="Art Nouveau brain design"
                     width={width}
                     height={height}
@@ -42,8 +46,8 @@ export const LandingContainer = () => {
                     style={
                         isDark
                             ? {
-                                  filter: 'invert(1) hue-rotate(180deg) saturate(1.4) brightness(1.12) contrast(1.3)',
-                                  mixBlendMode: 'screen',
+                                  filter: 'brightness(1.12) contrast(1.18) saturate(1.15)',
+                                  opacity: 0.96,
                               }
                             : undefined
                     }

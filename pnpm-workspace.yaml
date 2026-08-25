@@ -9,3 +9,12 @@ minimumReleaseAgeExclude:
   - '@floating-ui/react@0.27.20'
   - '@floating-ui/utils@0.2.12'
   - postcss@8.5.17
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - '@vercel/speed-insights'
+  - '@vscode/ripgrep'
+  - 'bufferutil'
+  - 'cypress'
+  - 'sharp'
+  - 'unrs-resolver'
+  - 'utf-8-validate'

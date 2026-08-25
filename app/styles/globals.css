@@ -76,7 +76,9 @@
     /* Accents */
     --color-accent: oklch(0.75 0.15387 166.913); /* dkaccentgreen */
     --color-accent-strong: oklch(0.65 0.11729 180.8506); /* dkaccentgreenvar */
-    --color-danger: oklch(0.63 0.2576 29.18); /* dkaccentred */
+    --color-danger: oklch(0.63 0.223 20.79); /* dkaccentred */
+    --color-danger-strong: oklch(0.41 0.1627 21.05); /* dkaccentredvar */
+    --color-poise: oklch(0.4355 0.199 329);
     --color-link: oklch(0.37 0.1362 285.87); /* dkaccentblue */
 
     /* Borders */
@@ -94,6 +96,8 @@
     --accent: var(--color-accent);
     --accent-strong: var(--color-accent-strong);
     --danger: var(--color-danger);
+    --danger-strong: var(--color-danger-strong);
+    --poise: var(--color-poise);
     --border: var(--color-border);
     --border-strong: var(--color-border-strong);
     --link: var(--color-link);

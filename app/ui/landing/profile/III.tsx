@@ -23,7 +23,7 @@ export const III = ({ className, insertNameHere, insertJobTitleHere }: IIIProps)
                 className="mt-4 w-md h-auto text-center animate-slide-in-left"
                 headlineText={insertJobTitleHere}
                 headlineStyle="default"
-                textColor="text-greengrays-chameleongray"
+                textColor="text-greengrays-camouflagegray"
                 textSize="text-lg"
             />
             <div className={'mt-4 sm:mt-10 h-auto'}>

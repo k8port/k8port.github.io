@@ -33,7 +33,8 @@ export const ButtonStyle = ({
     let activeStyleClass = 'active:bg-surface-elevated active:!text-accent';
     let loadingStyleClass =
         '[&[data-loading=true]]:bg-surface-elevated [&[data-loading=true]]:border-border [&[data-loading=true]]:!text-content';
-    let sizeClass = 'px-28 py-5';
+    let sizeClass: string;
+    let textSizeClass: string;
     const iconPositionClass = iconPosition;
     let borderRadiusClass = 'rounded-sm';
     const IconComponent = buttonIconSelection ?? null;
@@ -62,12 +63,16 @@ export const ButtonStyle = ({
 
     if (size === 'medium') {
         sizeClass = 'px-12 py-4';
+        textSizeClass = 'text-base';
     } else if (size === 'small') {
         sizeClass = 'px-10 py-3';
+        textSizeClass = 'text-sm';
     } else if (size === 'large') {
         sizeClass = 'px-28 py-5';
+        textSizeClass = 'text-lg';
     } else {
         sizeClass = 'px-8 py-2';
+        textSizeClass = 'text-[10.5px]';
     }
 
     if (borderRadius === 'eight') {
@@ -115,7 +120,7 @@ export const ButtonStyle = ({
                     w-fit mt-[px] 
                     whitespace-nowrap 
                     not-italic
-                    text-[10.5px]
+                    ${textSizeClass}
                     capitalize
                     data-[loading='true']:text-transparent
                     tracking-tight

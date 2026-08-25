@@ -21,7 +21,7 @@ export default function Header({ className }: { className?: string }) {
                                 leading-3
                             `}
                         >
-                            <span className="absolute top-6 left-22 md:left-50 text-content-muted tracking-tighter text-lg">
+                            <span className="absolute top-6 left-22 md:left-50 text-content-muted dark:text-content tracking-tighter text-lg">
                                 I&apos;m not just a node, I am circuits
                             </span>
                         </div>

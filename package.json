@@ -99,18 +99,6 @@
         "type": "git",
         "url": "https://github.com/k8port/k8port.github.io.git"
     },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "@tailwindcss/oxide",
-            "@vercel/speed-insights",
-            "@vscode/ripgrep",
-            "bufferutil",
-            "cypress",
-            "sharp",
-            "unrs-resolver",
-            "utf-8-validate"
-        ]
-    },
     "overrides": {
         "abab": "^2.0.7",
         "domexception": "^4.0.2",

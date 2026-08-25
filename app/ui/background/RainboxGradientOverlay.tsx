@@ -14,8 +14,8 @@ export default function RainbowGradientOverlay({
             <div
                 className={`
         absolute inset-0 bg-linear-to-b 
-        from-brand-quinaryvar 
-        to-accent-accentpinkvar 
+        from-brand-quinaryvar dark:from-dkquinaryvar
+        to-accent-accentpinkvar dark:to-dkaccentpurplevar
         ${innerClassName}
       `}
             ></div>
