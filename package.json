@@ -9,7 +9,6 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "export": "next export",
         "start": "next start",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "lint:fix": "eslint  . --ext .js,.jsx,.ts,.tsx --fix",
@@ -42,7 +41,7 @@
         "gray-matter": "^4.0.3",
         "lucide-react": "^0.474.0",
         "mermaid": "^11.13.0",
-        "next": "15.3.1",
+        "next": "15.5.21",
         "next-mdx-remote": "^5.0.0",
         "react": "^19.2.0",
         "react-chartjs-2": "^5.3.0",
